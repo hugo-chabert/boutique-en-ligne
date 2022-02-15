@@ -5,12 +5,12 @@ class Database
     public static function connect_db(): PDO
     {
         try {
-            $bdd = new PDO("mysql:host=localhost;dbname=boutique;charset=utf8", "root", "root");
-            $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            if (!$bdd) {
-                die("Connexion a la bdd impossible");
+            $db = new PDO("mysql:host=localhost;dbname=boutique;charset=utf8", "root", "root");
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            if (!$db) {
+                die("Connexion a la base de donnée impossible");
             }
-            return $bdd;
+            return $db;
         } catch (PDOException $e) {
 
             echo 'echec : ' . $e->getMessage();
