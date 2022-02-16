@@ -17,5 +17,10 @@ class User{
         unset($_SESSION['user']);
     }
 
+    public function info_all_user(){
+        $results = $this->User_model->sql_info_all_user();
+        return $results;
+    }
+
 }
 ?>
