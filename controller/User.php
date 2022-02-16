@@ -6,12 +6,16 @@ require_once(__DIR__ . '/../controller/Security.php');
 
 class User{
 
-        public $id;
+    public $id;
 
-        public function __construct($id){
-            $this->id = $id;
-            $this->User_model = new User_model();
-        }
+    public function __construct($id){
+        $this->id = $id;
+        $this->User_model = new User_model();
+    }
+
+    public static function disconnect(){
+        unset($_SESSION['user']);
+    }
 
 }
 ?>
