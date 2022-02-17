@@ -30,19 +30,19 @@ class Register{
             }
 
             if(Register::info_user_login($login_safe) == true){
-                Toolbox::addMessageAlert("Login est déjà utilisé !", Toolbox::RED_COLOR);
+                Toolbox::addMessageAlert("Ce login est déjà utilisé !", Toolbox::RED_COLOR);
                 header("Location: ./register.php");
                 exit();
             }
 
             if(Register::info_user_email($email_safe) == true){
-                Toolbox::addMessageAlert("L'email est déjà utilisé !", Toolbox::RED_COLOR);
+                Toolbox::addMessageAlert("Cette adresse mail est déjà utilisée !", Toolbox::RED_COLOR);
                 header("Location: ./register.php");
                 exit();
             }
         }
         else{
-            Toolbox::addMessageAlert("L'email n'est pas valide !", Toolbox::RED_COLOR);
+            Toolbox::addMessageAlert("Cette adresse mail n'est pas valide ! (exemple: michel@gmail.com)", Toolbox::RED_COLOR);
             header("Location: ./register.php");
             exit();
         }
@@ -62,7 +62,7 @@ class Register{
                 exit();
             }
             else{
-                Toolbox::addMessageAlert("Mdp incorrect.", Toolbox::RED_COLOR);
+                Toolbox::addMessageAlert("Mot de passe incorrect.", Toolbox::RED_COLOR);
                 header("Location: ./connection.php");
                 exit();
             }
@@ -81,6 +81,34 @@ class Register{
         $stmt = Database::connect_db()->prepare($req);
         $stmt->execute(array(
             ":login" => $login_safe
+        ));
+        $results = $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+        return $results;
+    }
+
+    public static function info_user_firstname($firstname){
+        $firstname_safe = Security::safeHTML($firstname);
+
+        //requete sql
+        $req = "SELECT * FROM users WHERE firstname = :firstname";
+        $stmt = Database::connect_db()->prepare($req);
+        $stmt->execute(array(
+            ":firstname" => $firstname_safe
+        ));
+        $results = $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+        return $results;
+    }
+
+    public static function info_user_lastname($lastname){
+        $lastname_safe = Security::safeHTML($lastname);
+
+        //requete sql
+        $req = "SELECT * FROM users WHERE lastname = :lastname";
+        $stmt = Database::connect_db()->prepare($req);
+        $stmt->execute(array(
+            ":lastname" => $lastname_safe
         ));
         $results = $stmt->fetch(PDO::FETCH_ASSOC);
         $stmt->closeCursor();
