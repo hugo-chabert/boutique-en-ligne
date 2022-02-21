@@ -15,7 +15,7 @@ class Register{
         if(filter_var($email_safe, FILTER_VALIDATE_EMAIL)){
             if(Register::info_user_login($login_safe) == false && Register::info_user_email($email_safe) == false){
                 $password_hash = password_hash($password_safe, PASSWORD_BCRYPT);
-                $req = "INSERT INTO users (login, firstname, lastname, email, password, id_right) VALUES (:login, :firstname, :lastname, :email, :password, 1)";
+                $req = "INSERT INTO users (login, firstname, lastname, email, password, rights) VALUES (:login, :firstname, :lastname, :email, :password, 0)";
                 $stmt = Database::connect_db()->prepare($req);
                 $stmt->execute(array(
                     ":login" => $login_safe,
