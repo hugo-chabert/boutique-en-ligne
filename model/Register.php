@@ -57,6 +57,7 @@ class Register{
             if(password_verify($password_safe, $results['password'])){
                 $_SESSION['user']['id'] = $results['id'];
                 $_SESSION['user']['login'] = $results['login'];
+                $_SESSION['user']['rights'] = $results['rights'];
                 Toolbox::addMessageAlert("Connexion faite.", Toolbox::GREEN_COLOR);
                 header("Location: ../index.php");
                 exit();

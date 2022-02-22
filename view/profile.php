@@ -103,7 +103,7 @@ if(isset($_POST['submit_password'])){
                     <legend>Modification de l'adresse mail</legend>
                     <label for="email"> Adresse mail </label>
                     <input type="text" name="email" value="<?= $user_info['email'] ?>" autocomplete="off">
-                    <button type="submit" name="submit_email">Modifier l'adresse mail'</button>
+                    <button type="submit" name="submit_email">Modifier l'adresse mail</button>
                 </fieldset>
                 <?php require_once(__DIR__ . '/errors.php'); ?>
             </form>
@@ -115,7 +115,7 @@ if(isset($_POST['submit_password'])){
                     <input type="password" name="old_password" autocomplete="off" placeholder="Ancien mot de passe">
                     <label for="new_password">Nouveau mot de passe</label>
                     <input type="password" name="new_password" autocomplete="off" placeholder="Nouveau mot de passe">
-                    <label for="confnew_password">Confirmation du Nouveau mot de passe</label>
+                    <label for="confnew_password">Confirmation du nouveau mot de passe</label>
                     <input type="password" name="confnew_password" autocomplete="off" placeholder="Confirmation mot de passe">
                     <button type="submit" name="submit_password">Modifier password</button>
                 </fieldset>
