@@ -54,18 +54,24 @@ class Register{
 
         if(Register::info_user_login($login) == true){
             $results = Register::info_user_login($login);
-            if(password_verify($password_safe, $results['password'])){
-                $_SESSION['user']['id'] = $results['id'];
-                $_SESSION['user']['login'] = $results['login'];
-                $_SESSION['user']['rights'] = $results['rights'];
-                Toolbox::addMessageAlert("Connexion faite.", Toolbox::GREEN_COLOR);
-                header("Location: ../index.php");
-                exit();
+            if(Register::check_ban($results['id']) == false){
+                if(password_verify($password_safe, $results['password'])){
+                    $_SESSION['user']['id'] = $results['id'];
+                    $_SESSION['user']['login'] = $results['login'];
+                    $_SESSION['user']['rights'] = $results['rights'];
+                    Toolbox::addMessageAlert("Connexion faite.", Toolbox::GREEN_COLOR);
+                    header("Location: ../index.php");
+                    exit();
+                }
+                else{
+                    Toolbox::addMessageAlert("Mot de passe incorrect.", Toolbox::RED_COLOR);
+                    header("Location: ./connection.php");
+                    exit();
+                }
             }
             else{
-                Toolbox::addMessageAlert("Mot de passe incorrect.", Toolbox::RED_COLOR);
-                header("Location: ./connection.php");
-                exit();
+                $ban = Register::check_ban($results['id']);
+                echo "T'es ban LOL, raison : ".$ban['reason'];
             }
         }
         elseif(Register::info_user_login($login) == false){
@@ -123,6 +129,16 @@ class Register{
         $stmt = Database::connect_db()->prepare($req);
         $stmt->execute(array(
             ":email" => $email_safe
+        ));
+        $results = $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+        return $results;
+    }
+    public static function check_ban($id){
+        $req = "SELECT * FROM ban WHERE id_user = :id_user";
+        $stmt = Database::connect_db()->prepare($req);
+        $stmt->execute(array(
+            ":id_user" => $id
         ));
         $results = $stmt->fetch(PDO::FETCH_ASSOC);
         $stmt->closeCursor();

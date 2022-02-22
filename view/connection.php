@@ -7,9 +7,10 @@ require_once(__DIR__ . '/../controller/Security.php');
 session_start();
 
 if(isset($_POST['connection'])){
-    if (!empty($_POST['login']) && !empty($_POST['password'])) {
+    if(!empty($_POST['login']) && !empty($_POST['password'])){
         Register::connection($_POST['login'], $_POST['password']);
-    } else {
+    }
+    else{
         Toolbox::addMessageAlert("Remplir tous les champs.", Toolbox::RED_COLOR);
     }
 }

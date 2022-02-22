@@ -84,6 +84,23 @@ class User_model{
         $stmt->closeCursor();
         return $modified;
     }
+
+    public function sql_ban($reason, $id){
+        $req = "INSERT INTO ban (reason, id_user) VALUES (:reason, :id_user)";
+        $stmt = Database::connect_db()->prepare($req);
+        $stmt->execute(array(
+            ':reason' => $reason,
+            ':id_user' => $id
+        ));
+    }
+
+    public function sql_unban($id){
+        $req = "DELETE FROM ban WHERE id_user = :id_user";
+        $stmt = Database::connect_db()->prepare($req);
+        $stmt->execute(array(
+            ':id_user' => $id
+        ));
+    }
 }
 
 ?>

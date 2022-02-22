@@ -136,8 +136,7 @@ class User{
         }
     }
 
-    public function modify_password($old_password, $new_password)
-    {
+    public function modify_password($old_password, $new_password){
         $old_password_safe = Security::safeHTML($old_password);
         $new_password_safe = Security::safeHTML($new_password);
         $password_db = $this->User_model->sql_info_user_id($this->id);
@@ -154,6 +153,18 @@ class User{
             header("Location: ./profile.php");
             exit();
         }
+    }
+
+    public function ban($reason, $id){
+        $id_safe = Security::safeHTML($id);
+        $this->User_model->sql_ban($reason, $id_safe);
+        Toolbox::addMessageAlert("Utilisateur banni !", Toolbox::GREEN_COLOR);
+    }
+
+    public function unban($id){
+        $id_safe = Security::safeHTML($id);
+        $this->User_model->sql_unban($id_safe);
+        Toolbox::addMessageAlert("Utilisateur débanni !", Toolbox::GREEN_COLOR);
     }
 
 }
