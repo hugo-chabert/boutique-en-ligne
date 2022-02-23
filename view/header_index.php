@@ -4,7 +4,7 @@
 <header>
     <nav>
         <div class="logo">
-            <a href=""><img src="" width="100px"></a>
+            <a href=""><img src="public/img/logo.png" width="70px"></a>
             <a href=""><h1>Takahiro Arts</h1></a>
         </div>
         <div class="menu">
@@ -18,7 +18,7 @@
             <ul class="ul-menu-spe">
                 <li> <a href=""><img src="" alt=""></a> </li>
                 <li> <a href=""><img src="" alt=""></a> </li>
-                <li> <a href="deconnexion.php">Deconnexion</a> </li>
+                <li> <a href="view/deconnexion.php">Deconnexion</a> </li>
                 <?php  } ?>
             </ul>
             <?php

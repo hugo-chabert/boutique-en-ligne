@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="public/css/footer.css">
 <link rel="stylesheet" href="public/css/root&font.css">
 <footer>
-    <div class="container">
+    <div class="container-footer">
         <div class="part-up">
             <section class="about">
                 <h2>About</h2>
