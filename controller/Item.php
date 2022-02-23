@@ -21,6 +21,16 @@ class Item{
         $results = $this->Item_model->sql_info_categories();
         return $results;
     }
+
+    public function info_items(){
+        $results = $this->Item_model->sql_info_items();
+        return $results;
+    }
+
+    public function display_item($id){
+        $results = $this->Item_model->sql_display_item($id);
+        return $results;
+    }
 }
 
 ?>
