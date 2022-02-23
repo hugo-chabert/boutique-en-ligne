@@ -78,11 +78,11 @@ if(isset($_POST['unban'])){
                         if(Register::check_ban($value['id']) == false){
                         ?>
                         <tr>
-                            <td> <?= $value['id'] ?> </td>
-                            <td> <?= $value['login'] ?></td>
-                            <td> <?= $value['firstname'] ?></td>
-                            <td> <?= $value['lastname'] ?></td>
-                            <td> <?= $value['email'] ?></td>
+                            <td><?= $value['id'] ?></td>
+                            <td><a href="admin-modify-user?id=<?=$value['id']?>.php"><?= $value['login'] ?></a></td>
+                            <td><?= $value['firstname'] ?></td>
+                            <td><?= $value['lastname'] ?></td>
+                            <td><?= $value['email'] ?></td>
                         </tr>
                     <?php }}
                     ?>
@@ -115,7 +115,7 @@ if(isset($_POST['unban'])){
                         ?>
                         <tr>
                             <td> <?= $value['id'] ?> </td>
-                            <td> <?= $value['login'] ?></td>
+                            <td><a href="admin-modify-user?id=<?=$value['id']?>.php"><?= $value['login'] ?></a></td>
                             <td> <?= $value['firstname'] ?></td>
                             <td> <?= $value['lastname'] ?></td>
                             <td> <?= $value['email'] ?></td>
