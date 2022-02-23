@@ -9,6 +9,7 @@ session_start();
 
 $item = new Item();
 $item_info = $item->display_item($_GET['id']);
+$category = $item->display_category($item_info['id_category']);
 
 
 ?>
@@ -21,11 +22,11 @@ $item_info = $item->display_item($_GET['id']);
 </head>
 <body>
     <main>
-        Nom : <?php echo $item_info['name'];?>
-        Description : <?php echo $item_info['description'];?>
-        Prix : <?php echo $item_info['price'];?>
-        Categorie : <?php echo $item_info['id_category'];?>
-        Image : <?php echo '<img class= image src="../public/img/'.$item_info['image'].'">';?>
+        Nom : <?php echo $item_info['name'];?><br/>
+        Description : <?php echo $item_info['description'];?></br>
+        Prix : <?php echo $item_info['price'];?> €</br>
+        Categorie : <?php echo $category['name'];?></br>
+        Image : <?php echo '<img class= image src="../public/img/'.$item_info['image'].'">';?></br>
     </main>
 </body>
 </html>

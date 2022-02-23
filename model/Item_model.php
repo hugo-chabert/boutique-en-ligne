@@ -55,6 +55,17 @@ class Item_model{
         $stmt->closeCursor();
         return $results;
     }
+
+    public function sql_display_category($id_category){
+        $req = "SELECT * FROM categories WHERE id = :id";
+        $stmt = Database::connect_db()->prepare($req);
+        $stmt->execute(array(
+            ":id" => $id_category
+        ));
+        $results = $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+        return $results;
+    }
 }
 
 ?>

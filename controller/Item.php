@@ -31,6 +31,11 @@ class Item{
         $results = $this->Item_model->sql_display_item($id);
         return $results;
     }
+
+    public function display_category($id_category){
+        $results = $this->Item_model->sql_display_category($id_category);
+        return $results;
+    }
 }
 
 ?>
