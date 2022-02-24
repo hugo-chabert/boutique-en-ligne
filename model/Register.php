@@ -15,7 +15,7 @@ class Register{
         if(filter_var($email_safe, FILTER_VALIDATE_EMAIL)){
             if(Register::info_user_login($login_safe) == false && Register::info_user_email($email_safe) == false){
                 $password_hash = password_hash($password_safe, PASSWORD_BCRYPT);
-                $req = "INSERT INTO users (login, firstname, lastname, email, password, id_right) VALUES (:login, :firstname, :lastname, :email, :password, 1)";
+                $req = "INSERT INTO users (login, firstname, lastname, email, password, rights) VALUES (:login, :firstname, :lastname, :email, :password, 0)";
                 $stmt = Database::connect_db()->prepare($req);
                 $stmt->execute(array(
                     ":login" => $login_safe,
@@ -30,19 +30,19 @@ class Register{
             }
 
             if(Register::info_user_login($login_safe) == true){
-                Toolbox::addMessageAlert("Login est déjà utilisé !", Toolbox::RED_COLOR);
+                Toolbox::addMessageAlert("Ce login est déjà utilisé !", Toolbox::RED_COLOR);
                 header("Location: ./register.php");
                 exit();
             }
 
             if(Register::info_user_email($email_safe) == true){
-                Toolbox::addMessageAlert("L'email est déjà utilisé !", Toolbox::RED_COLOR);
+                Toolbox::addMessageAlert("Cette adresse mail est déjà utilisée !", Toolbox::RED_COLOR);
                 header("Location: ./register.php");
                 exit();
             }
         }
         else{
-            Toolbox::addMessageAlert("L'email n'est pas valide !", Toolbox::RED_COLOR);
+            Toolbox::addMessageAlert("Cette adresse mail n'est pas valide ! (exemple: michel@gmail.com)", Toolbox::RED_COLOR);
             header("Location: ./register.php");
             exit();
         }
@@ -54,17 +54,24 @@ class Register{
 
         if(Register::info_user_login($login) == true){
             $results = Register::info_user_login($login);
-            if(password_verify($password_safe, $results['password'])){
-                $_SESSION['user']['id'] = $results['id'];
-                $_SESSION['user']['login'] = $results['login'];
-                Toolbox::addMessageAlert("Connexion faite.", Toolbox::GREEN_COLOR);
-                header("Location: ../index.php");
-                exit();
+            if(Register::check_ban($results["id"]) == false){
+                if(password_verify($password_safe, $results["password"])){
+                    $_SESSION["user"]["id"] = $results["id"];
+                    $_SESSION["user"]["login"] = $results["login"];
+                    $_SESSION["user"]["rights"] = $results["rights"];
+                    Toolbox::addMessageAlert("Connexion faite.", Toolbox::GREEN_COLOR);
+                    header("Location: ../index.php");
+                    exit();
+                }
+                else{
+                    Toolbox::addMessageAlert("Mot de passe incorrect.", Toolbox::RED_COLOR);
+                    header("Location: ./connection.php");
+                    exit();
+                }
             }
             else{
-                Toolbox::addMessageAlert("Mdp incorrect.", Toolbox::RED_COLOR);
-                header("Location: ./connection.php");
-                exit();
+                $ban = Register::check_ban($results['id']);
+                echo "T'es ban LOL, raison : ".$ban['reason'];
             }
         }
         elseif(Register::info_user_login($login) == false){
@@ -87,6 +94,34 @@ class Register{
         return $results;
     }
 
+    public static function info_user_firstname($firstname){
+        $firstname_safe = Security::safeHTML($firstname);
+
+        //requete sql
+        $req = "SELECT * FROM users WHERE firstname = :firstname";
+        $stmt = Database::connect_db()->prepare($req);
+        $stmt->execute(array(
+            ":firstname" => $firstname_safe
+        ));
+        $results = $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+        return $results;
+    }
+
+    public static function info_user_lastname($lastname){
+        $lastname_safe = Security::safeHTML($lastname);
+
+        //requete sql
+        $req = "SELECT * FROM users WHERE lastname = :lastname";
+        $stmt = Database::connect_db()->prepare($req);
+        $stmt->execute(array(
+            ":lastname" => $lastname_safe
+        ));
+        $results = $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+        return $results;
+    }
+
     public static function info_user_email($email){
         $email_safe = Security::safeHTML($email);
 
@@ -94,6 +129,17 @@ class Register{
         $stmt = Database::connect_db()->prepare($req);
         $stmt->execute(array(
             ":email" => $email_safe
+        ));
+        $results = $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+        return $results;
+    }
+
+    public static function check_ban($id){
+        $req = "SELECT * FROM ban WHERE id_user = :id_user";
+        $stmt = Database::connect_db()->prepare($req);
+        $stmt->execute(array(
+            ":id_user" => $id
         ));
         $results = $stmt->fetch(PDO::FETCH_ASSOC);
         $stmt->closeCursor();

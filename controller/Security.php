@@ -6,7 +6,6 @@ class Security{
         $results  = strip_tags($chain);
         $results = htmlentities($results);
         $results = htmlspecialchars($results);
-
         return $results;
     }
 
