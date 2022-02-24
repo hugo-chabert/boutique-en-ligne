@@ -1,0 +1,29 @@
+:root {
+    
+    --Transparent-: rgba(255, 255, 255, 0);
+    --LightShadow-: rgba(0, 0, 0, 0.15);
+    --Shadow-: rgba(0, 0, 0, 0.39);
+    --DarkShadow-: rgba(0, 0, 0, 0.466);
+    --White-: #FFFFFF;
+    --Black-: #000000;
+    --Grey-: #757575;
+    
+    --Background0-: #E7DADA;
+    --Background1-: #DFCECE;
+    --Background2-: #D7C1C1;
+    --Background3-: #CFB4B4;
+    --Background4-: #C7A8A8;
+    --Background5-: #BF9B9B;
+    
+    --Button-: #55565d;
+
+    --Hover-: #205d83;
+    --Base-: #A4B8C4;
+    
+    --Color1-: #3b5998;
+    --Color2-: #00aced;
+    --Color3-: #ea4c89;
+    --Color4-: #d8d7d7;
+    --Error-: rgb(187, 8, 8);
+    --Success-: #65F695;
+}
