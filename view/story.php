@@ -16,24 +16,24 @@ session_start();
     <main>
         <div class="container">
             <section class="header">
-                <h1>Le Monde de Takahiro Arts</h1>
+                <a href="#history"><h1>Le Monde de Takahiro Arts</h1></a>
             </section>
 
             <section class ="section-pres">
-                <h2>Qui est Takahiro Arts ?</h2>
+                <h2 id="history">Qui est Takahiro Arts ?</h2>
                 <p>
                     Takahiro est un prénom issu du japonais (taka) "de valeur, noble" ou (taka)
                     "piété filiale" combiné avec (hiro) "grand, grand(super)" ou (hiro) "prospère".
                     Le choix de ce pseudo à son importance dans le sens ou, c'est une bonne
                     représentation de la grandeur et de la prospérité de par son éthymologie.
-                    <br>
+                    <br><br>
                     Passionné depuis tout petit par le monde japonais et l'art en général, le meilleur
                     moyen de combiné ces deux mondes et de se tourner vers les mangas. Dessiné un
                     personnage demande beaucoup de travail, il faut le maquetter, penser au chara-design
                     , proposer plusieur design au personnage et une multitude d'autre paramètres.
                     Voila d'où est né cette passion, le sens du détails nous pousse à créer chez Takahiro
                     Arts des oeuvres uniques et travaillées au maximum.
-                    <br>
+                    <br><br>
                     Créé en Juin 2020, nous vendons nos oeuvres en suivant vos exigences les plus folles.
                     Nous vous proposons une multitude de création pour satisfaire vos yeux, vous êtes
                     un fan, d'art, d'anime, de manga et de la culture Japonaise ? Eh bien n'attendais
@@ -43,8 +43,92 @@ session_start();
                 </p>
             </section>
 
-            <section class="section-real">
+            <div class="parallax"></div>
 
+            <section class="section-real">
+                <h2>Qu'est ce que nous proposons ?</h2>
+                <div class="bloc-real">
+
+                    <div class="card">
+                        <div class="imgBx">
+                            <img src="../public/img/blacky.PNG">
+                        </div>
+                        <div class="contentBx">
+                            <div class="content">
+                                <h3>Portrait</h3>
+                                <p>
+                                    Basé sur une photo de vous, nous reproduirons le plus
+                                    fidelement possible vos traits physiques
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="imgBx">
+                            <img src="../public/img/portrait-dbz.PNG">
+                        </div>
+                        <div class="contentBx">
+                            <div class="content">
+                                <h3>Portrait Custom</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing
+                                    elit, sed do eiusmod tempor incididunt ut labore et
+                                    dolore magna aliqua.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="imgBx">
+                            <img src="../public/img/custom shoes.png">
+                        </div>
+                        <div class="contentBx">
+                            <div class="content">
+                                <h3>Custom Shoes</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing
+                                    elit, sed do eiusmod tempor incididunt ut labore et
+                                    dolore magna aliqua.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="imgBx">
+                            <img src="../public/img/logo-esport.PNG">
+                        </div>
+                        <div class="contentBx">
+                            <div class="content">
+                                <h3>Logo</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing
+                                    elit, sed do eiusmod tempor incididunt ut labore et
+                                    dolore magna aliqua.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="imgBx">
+                            <img src="../public/img/SNK.PNG">
+                        </div>
+                        <div class="contentBx">
+                            <div class="content">
+                                <h3>Poster</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing
+                                    elit, sed do eiusmod tempor incididunt ut labore et
+                                    dolore magna aliqua.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
             </section>
         </div>
     </main>
