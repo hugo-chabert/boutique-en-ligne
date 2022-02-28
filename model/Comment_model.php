@@ -24,5 +24,24 @@ class Comment_model{
             ':id_item' => $id_item
         ));
     }
+
+    public function sql_info_comments_admin($id_user){
+        $req = "SELECT * FROM comments WHERE id_user = :id_user";
+        $stmt = Database::connect_db()->prepare($req);
+        $stmt->execute(array(
+            ":id_user" => $id_user
+        ));
+        $results = $stmt->fetchAll();
+        $stmt->closeCursor();
+        return $results;
+    }
+
+    public static function sql_delete($id){
+        $req = "DELETE FROM comments WHERE id = :id";
+        $stmt = Database::connect_db()->prepare($req);
+        $stmt->execute(array(
+            ':id' => $id
+        ));
+    }
 }
 ?>
