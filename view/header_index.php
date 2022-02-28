@@ -16,9 +16,9 @@
                 <?php if (isset($_SESSION['user'])) { ?>
             </ul>
             <ul class="ul-menu-spe">
-                <li> <a href=""><img src="" alt=""></a> </li>
-                <li> <a href=""><img src="" alt=""></a> </li>
-                <li> <a href="view/deconnexion.php">Deconnexion</a> </li>
+            <li> <a href=""><img src="https://img.icons8.com/pastel-glyph/64/000000/shopping-trolley--v2.png" width="40px"/></a> </li>
+                <li> <a href="view/profile.php"><img src="https://img.icons8.com/ios/50/000000/gender-neutral-user.png" width="40px"/></a> </li>
+                <li> <a href="view/disconnect.php">Deconnexion</a> </li>
                 <?php  } ?>
             </ul>
             <?php

@@ -19,8 +19,8 @@ session_start();
                 <a href="#history"><h1>Le Monde de Takahiro Arts</h1></a>
             </section>
 
-            <section class ="section-pres">
-                <h2 id="history">Qui est Takahiro Arts ?</h2>
+            <section class ="section-pres" id="history">
+                <h2 >Qui est Takahiro Arts ?</h2>
                 <p>
                     Takahiro est un prénom issu du japonais (taka) "de valeur, noble" ou (taka)
                     "piété filiale" combiné avec (hiro) "grand, grand(super)" ou (hiro) "prospère".
@@ -43,7 +43,9 @@ session_start();
                 </p>
             </section>
 
-            <div class="parallax"></div>
+            <div class="parallax">
+                <div class="blur"></div>
+            </div>
 
             <section class="section-real">
                 <h2>Qu'est ce que nous proposons ?</h2>
@@ -72,9 +74,9 @@ session_start();
                             <div class="content">
                                 <h3>Portrait Custom</h3>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing
-                                    elit, sed do eiusmod tempor incididunt ut labore et
-                                    dolore magna aliqua.
+                                    Dans le style de l'animé de votre choix, nous
+                                    réaliserons un protrait de vous dans l'univers
+                                    manga de votre choix.
                                 </p>
                             </div>
                         </div>
@@ -88,9 +90,9 @@ session_start();
                             <div class="content">
                                 <h3>Custom Shoes</h3>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing
-                                    elit, sed do eiusmod tempor incididunt ut labore et
-                                    dolore magna aliqua.
+                                    Nous personnaliserons vos paires de chaussures
+                                    préférées pour en faire des pièces uniques et
+                                    de bonnes qualités.
                                 </p>
                             </div>
                         </div>
@@ -104,9 +106,8 @@ session_start();
                             <div class="content">
                                 <h3>Logo</h3>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing
-                                    elit, sed do eiusmod tempor incididunt ut labore et
-                                    dolore magna aliqua.
+                                    Nous créons aussi des logos pour entreprise, e-sport,
+                                    marque de vetement et autres exemples.
                                 </p>
                             </div>
                         </div>
@@ -120,14 +121,14 @@ session_start();
                             <div class="content">
                                 <h3>Poster</h3>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing
-                                    elit, sed do eiusmod tempor incididunt ut labore et
-                                    dolore magna aliqua.
+                                    Nous dessinerons des poster que par la suite nous
+                                    encadrerons pour vous permettre d'orner votre intèrieur
+                                    avec vos animés préférés.
                                 </p>
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </section>
         </div>

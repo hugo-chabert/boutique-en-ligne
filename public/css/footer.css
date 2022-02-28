@@ -79,16 +79,17 @@ hr{
     background: linear-gradient(45deg, rgba(2,0,36,0) 5%, rgba(255,255,255,.5) 6%, rgba(255,255,255,0) 9%, rgba(255,255,255,.5) 10%, rgba(255,255,255,0) 17%, rgba(255,255,255,.5) 19%, rgba(255,255,255,0) 21%);
     background-size: 150%;
     background-position: right;
+    background-color: var(--Background4-);
     transition: 1s;
 }
 
-button:hover {
+footer button:hover {
     background-position: left;
     color: white;
     box-shadow: inset 0px 3px 5px rgba(255,255,255,1), 0px 0px 10px rgba(0,0,0,0.25);
 }
 
-button:focus {
+footer button:focus {
     outline: none;
 }
 
@@ -107,4 +108,3 @@ button:focus {
 footer div div ul li a:hover{
     color: var(--Hover-);
 }
-
