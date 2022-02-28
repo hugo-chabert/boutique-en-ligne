@@ -16,6 +16,8 @@ class User{
 
     public static function disconnect(){
         unset($_SESSION['user']);
+        header("Location: ../index.php");
+        exit();
     }
 
     public function info_all_user(){

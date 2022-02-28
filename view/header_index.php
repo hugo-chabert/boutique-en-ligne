@@ -18,7 +18,7 @@
             <ul class="ul-menu-spe">
                 <li> <a href=""><img src="" alt=""></a> </li>
                 <li> <a href=""><img src="" alt=""></a> </li>
-                <li> <a href="view/deconnexion.php">Deconnexion</a> </li>
+                <li> <a href="view/disconnect.php">Deconnexion</a> </li>
                 <?php  } ?>
             </ul>
             <?php
