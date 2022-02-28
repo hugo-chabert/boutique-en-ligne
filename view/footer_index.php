@@ -50,8 +50,8 @@
                 <p class="copyright-text">Copyright &copy; All Rights Reserved.
             </section>
             <section class="social">
-                <li><button class="facebook"><a  href="#"><img src="https://img.icons8.com/ios/30/000000/facebook--v1.png" alt="social" width="30px"></a></button></li>
-                <li><button class="twitter"><a  href="#"><img src="https://img.icons8.com/ios/30/000000/twitter--v1.png" alt="social"width="30px" ></a></button></li>
+                <li><button class="facebook"><a  href="https://facebook.com"><img src="https://img.icons8.com/ios/30/000000/facebook--v1.png" alt="social" width="30px"></a></button></li>
+                <li><button class="twitter"><a  href="https://twitter.com"><img src="https://img.icons8.com/ios/30/000000/twitter--v1.png" alt="social"width="30px" ></a></button></li>
                 <li><button class="instagram"><a  href="https://www.instagram.com/takahiro__arts/"><img src="https://img.icons8.com/ios/30/000000/instagram-new--v1.png" alt="social"width="30px"></a></button></li>
                 <li><button class="github"><a  href="https://github.com/hugo-chabert/boutique-en-ligne"><img src="https://img.icons8.com/ios-glyphs/30/000000/github.png" alt="social"width="30px"></a></button></li>
             </section>

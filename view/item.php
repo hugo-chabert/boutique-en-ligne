@@ -15,8 +15,13 @@ $category = $item->display_category($item_info['id_category']);
 $comment = new Comment();
 $comment_info = $comment->info_comments($item_info['id']);
 
-if (isset($_POST["comment"]) && $_POST["comment"] != NULL) {
+if(isset($_POST["comment"]) && $_POST["comment"] != NULL){
     Comment_model::write_comment($_POST['comment'], $_SESSION['user']['id'], $item_info['id']);
+}
+
+if(empty($_GET['id'])){
+    header("Location: store.php");
+    exit();
 }
 
 ?>
@@ -35,16 +40,22 @@ if (isset($_POST["comment"]) && $_POST["comment"] != NULL) {
         Categorie : <?php echo $category['name'];?></br>
         Image : <?php echo '<img class= image src="../public/img/'.$item_info['image'].'">';?></br>
         <div class="comments">
-            <?php foreach($comment_info as $com){
+            <?php
+            foreach($comment_info as $com){
                 echo $com['text'];
             }
-            ?>
-            <form method="post">
-                <a class="comm" >Votre commentaire :<br/>
-                    <textarea class = "send_com" name="comment" rows="10%" cols="90%"></textarea>
-                </a>
-                <button class = 'button' type="submit" name="send"> Envoyer </button>
-            </form>
+
+            if(Security::isConnect()){?>
+                <form method="post">
+                    <a class="comm" >Votre commentaire :<br/>
+                        <textarea class = "send_com" name="comment" rows="10%" cols="90%"></textarea>
+                    </a>
+                    <button class = 'button' type="submit" name="send"> Envoyer </button>
+                </form>
+            <?php }
+            else{?>
+                Veuillez vous connecter pour ecrire un commentaire !!
+            <?php } ?>
         </div>
     </main>
 </body>

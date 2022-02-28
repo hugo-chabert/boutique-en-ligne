@@ -23,7 +23,7 @@ if (isset($_SESSION['user'])) {
 <body>
     <?php require("view/header_index.php");?>
     <main>
-        
+    <?php require_once(__DIR__ . '/view/errors.php'); ?>
     </main>
     <?php require("view/footer_index.php");?>
 </body>

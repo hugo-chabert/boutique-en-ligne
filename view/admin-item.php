@@ -9,6 +9,7 @@ session_start();
 
 if($_SESSION['user']['rights'] != 1){
     header('Location: ../index.php');
+    exit();
 }
 
 $item = new Item();

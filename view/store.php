@@ -1,19 +1,31 @@
-<?php session_start();?>
+<?php
+
+require_once(__DIR__ . '/../controller/Item.php');
+require_once(__DIR__ . '/../controller/Toolbox.php');
+require_once(__DIR__ . '/../controller/Security.php');
+
+session_start();
+
+$item = new Item();
+$items_info = $item->info_items();
+
+?>
+
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../public/css/store.css">
-        <link rel="stylesheet" href="../public/css/root&font.css">
-        <title>Store</title>
-    </head>
-    <body>
-        <?php require("header.php");?>
-        <main>
-            
-        </main>
-        <?php require("footer.php");?>
-    </body>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Articles</title>
+    <link rel="stylesheet" href="../public/css/temp.css">
+</head>
+<body>
+    <?php require("header.php");?>
+    <main>
+        <?php foreach($items_info as $item){
+            echo '<div>'.$item['name'].$item['price'].'<img class= image src="../public/img/'.$item['image'].'">';
+            echo '<button><a href="item.php?id='.$item['id'].'">Aller à l article</a></button></div>';
+        }?>
+    </main>
+    <?php require("footer.php");?>
+</body>
 </html>
