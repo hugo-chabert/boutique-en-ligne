@@ -4,7 +4,7 @@ html, body {
     width: 100%;
     scroll-behavior: smooth;
 }
-ul{
+footer ul{
     list-style-type : none;
     padding: 0;
 }
@@ -44,7 +44,7 @@ footer div div section h2{
     flex-direction: row;
     justify-content: space-between;
 }
-hr{
+footer hr{
     border-top-color:rgb(0, 0, 0);
     opacity:0.7;
     width: 70%;
