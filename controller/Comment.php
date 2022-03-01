@@ -15,6 +15,11 @@ class Comment{
         return $results;
     }
 
+    public function info_advices(){
+        $results = $this->Comment_model->sql_info_advices();
+        return $results;
+    }
+
     public function info_comments_admin($id_user){
         $results = $this->Comment_model->sql_info_comments_admin($id_user);
         return $results;

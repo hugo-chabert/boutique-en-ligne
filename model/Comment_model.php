@@ -15,6 +15,15 @@ class Comment_model{
         return $results;
     }
 
+    public function sql_info_advices(){
+        $req = "SELECT * FROM advices";
+        $stmt = Database::connect_db()->prepare($req);
+        $stmt->execute();
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+        return $results;
+    }
+
     public static function write_comment($text, $id_user, $id_item){
         $req = "INSERT INTO comments (text, id_user, id_item) VALUE (:text, :id_user, :id_item)";
         $stmt = Database::connect_db()->prepare($req);
@@ -23,6 +32,19 @@ class Comment_model{
             ':id_user' => $id_user,
             ':id_item' => $id_item
         ));
+        header("Location: item.php?id=".$id_item);
+        exit();
+    }
+
+    public static function write_advice($text, $id_user){
+        $req = "INSERT INTO advices (text, id_user) VALUE (:text, :id_user)";
+        $stmt = Database::connect_db()->prepare($req);
+        $stmt->execute(array(
+            ':text' => $text,
+            ':id_user' => $id_user
+        ));
+        header("Location: advices.php");
+        exit();
     }
 
     public function sql_info_comments_admin($id_user){

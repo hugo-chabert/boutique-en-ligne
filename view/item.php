@@ -1,6 +1,5 @@
 <?php
 
-
 require_once(__DIR__ . '/../controller/Item.php');
 require_once(__DIR__ . '/../controller/Comment.php');
 require_once(__DIR__ . '/../controller/Toolbox.php');
@@ -38,11 +37,12 @@ if(empty($_GET['id'])){
         Description : <?php echo $item_info['description'];?></br>
         Prix : <?php echo $item_info['price'];?> €</br>
         Categorie : <?php echo $category['name'];?></br>
+        Stocks : <?php echo $item_info['quantity'];?> disponibles</br>
         Image : <?php echo '<img class= image src="../public/img/'.$item_info['image'].'">';?></br>
         <div class="comments">
             <?php
             foreach($comment_info as $com){
-                echo $com['text'];
+                echo $com['text'];?></br><?php
             }
 
             if(Security::isConnect()){?>

@@ -10,9 +10,9 @@ class Item{
         $this->Item_model = new Item_model();
     }
 
-    public static function create($name, $description, $price, $img, $category){
+    public static function create($name, $description, $price, $img, $category, $quantity){
         $name_safe = Security::safeHTML($name);
-        $results = Item_model::sql_create($name_safe, $description, $price, $img, $category);
+        $results = Item_model::sql_create($name_safe, $description, $price, $img, $category, $quantity);
         Toolbox::addMessageAlert("Article créé !", Toolbox::GREEN_COLOR);
         return $results;
     }

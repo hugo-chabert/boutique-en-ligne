@@ -13,15 +13,16 @@ class Item_model{
         return $results;
     }
 
-    public static function sql_create($name, $description, $price, $img, $category){
-        $req = "INSERT INTO items (name, description, price, image, id_category) VALUE (:name, :description, :price, :image, :id_category)";
+    public static function sql_create($name, $description, $price, $img, $category, $quantity){
+        $req = "INSERT INTO items (name, description, price, image, id_category, quantity) VALUE (:name, :description, :price, :image, :id_category, :quantity)";
         $stmt = Database::connect_db()->prepare($req);
         $stmt->execute(array(
             ':name' => $name,
             ':description' => $description,
             ':price' => $price,
             ':image' => $img,
-            ':id_category' => $category
+            ':id_category' => $category,
+            ':quantity' => $quantity
         ));
     }
 
