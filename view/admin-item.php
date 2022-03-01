@@ -57,6 +57,7 @@ if(isset($_POST["submit"]) && !empty($_FILES["my_image"]["name"]) && !empty($_PO
     <title>Gestion des articles</title>
 </head>
 <body>
+    <?php require("header.php");?>
     <main>
         <form action="" method="post" enctype="multipart/form-data">
             <label>Nom de l'article :</label>
@@ -77,5 +78,6 @@ if(isset($_POST["submit"]) && !empty($_FILES["my_image"]["name"]) && !empty($_PO
             <?php require_once(__DIR__ . '/errors.php'); ?>
         </form>
     </main>
+    <?php require("footer.php")?>
 </body>
 </html>

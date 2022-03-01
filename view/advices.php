@@ -25,6 +25,7 @@ if(isset($_POST["comment"]) && $_POST["comment"] != NULL){
     <title>Vos avis</title>
 </head>
 <body>
+    <?php require("header.php");?>
     <main>
         <p>Ici vous pouvez laisser un avis sur le site !!</p>
         <?php
@@ -38,5 +39,6 @@ if(isset($_POST["comment"]) && $_POST["comment"] != NULL){
             <button class = 'button' type="submit" name="send"> Envoyer </button>
         </form>
     </main>
+    <?php require("footer.php")?>
 </body>
 </html>

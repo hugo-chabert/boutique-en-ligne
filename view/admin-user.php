@@ -61,6 +61,7 @@ if(isset($_POST['unban'])){
     <title>Gestion des utilisateurs</title>
 </head>
 <body>
+    <?php require("header.php");?>
     <main>
         <div>
             <table>
@@ -134,5 +135,6 @@ if(isset($_POST['unban'])){
             </form>
         </div>
     </main>
+    <?php require("footer.php")?>
 </body>
 </html>

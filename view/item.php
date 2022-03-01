@@ -32,6 +32,7 @@ if(empty($_GET['id'])){
     <title>Article</title>
 </head>
 <body>
+    <?php require("header.php");?>
     <main>
         Nom : <?php echo $item_info['name'];?><br/>
         Description : <?php echo $item_info['description'];?></br>
@@ -58,5 +59,6 @@ if(empty($_GET['id'])){
             <?php } ?>
         </div>
     </main>
+    <?php require("footer.php")?>
 </body>
 </html>

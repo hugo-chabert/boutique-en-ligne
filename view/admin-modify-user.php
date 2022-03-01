@@ -31,6 +31,7 @@ $comment_info = $comment->info_comments_admin($_GET['id']);
     <title>Gestion d'un utilisateur</title>
 </head>
 <body>
+    <?php require("header.php");?>
     <main>
         <table>
             <thead>
@@ -52,11 +53,12 @@ $comment_info = $comment->info_comments_admin($_GET['id']);
             </tbody>
         </table>
         <form action="" method="post">
-                <label>ID :</label>
-                <input type="text" name="id" placeholder="Entrez l'ID du commentaire" />
-                <button type="submit" name="del">Supprimer</button>
-                <?php require_once(__DIR__ . '/errors.php'); ?>
-            </form>
+            <label>ID :</label>
+            <input type="text" name="id" placeholder="Entrez l'ID du commentaire" />
+            <button type="submit" name="del">Supprimer</button>
+            <?php require_once(__DIR__ . '/errors.php'); ?>
+        </form>
     </main>
+    <?php require("footer.php")?>
 </body>
 </html>

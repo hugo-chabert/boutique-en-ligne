@@ -17,9 +17,11 @@ if($_SESSION['user']['rights'] != 1){
     <title>Admin</title>
 </head>
 <body>
+    <?php require("header.php");?>
     <main>
-    <a href= admin-user.php>Gestion des utilisateurs</a>
-    <a href= admin-item.php>Gestion des articles</a>
+        <a href= admin-user.php>Gestion des utilisateurs</a>
+        <a href= admin-item.php>Gestion des articles</a>
     </main>
+    <?php require("footer.php")?>
 </body>
 </html>
