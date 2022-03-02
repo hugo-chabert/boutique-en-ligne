@@ -1,0 +1,106 @@
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.profile-pres{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 9.375rem;
+}
+.side-nav{
+    width: 40%;
+    margin-top: 3.125rem;
+}
+
+
+.side-nav h1{
+    font-size: clamp(1rem, 2vw, 2rem);
+    margin-left: 2.5rem ;
+}
+
+.side-nav ul{
+    list-style-type : none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.side-nav li {
+    width: 15.625rem;
+    padding: 1.875rem;
+    border-bottom: 1px solid var(--Grey2-);
+    text-align: center;
+}
+.side-nav li a{
+    text-decoration: none ;
+    letter-spacing: 1px;
+    color: var(--Black-);
+    transition: all .2s ease-in-out;
+}
+
+.side-nav li a:hover{
+    color: var(--Hover-);
+}
+
+.profile-pres p{
+    text-align: justify ;
+    font-size: clamp(0.5rem, 2vw, 1.25rem);
+}
+
+article {
+    border: 2px solid var(--Background4-);
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    margin-left: 2.5rem;
+    max-width: 27.125rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+}
+article p{
+    margin-top: 0.625rem;
+    margin-bottom: 0.625rem;
+}
+
+.profile-pres img{
+    width: 100%;
+    max-width: 25rem;
+    height: auto;
+}
+.div-button{
+    align-self: center;
+}
+article button {
+    align-self: center;
+    margin: 20px 5px 20px ;
+    font-family: inherit;
+    font-size: clamp(0.5rem, 2vw, 1rem);
+    font-weight: 200;
+    letter-spacing: 1px;
+    padding: 10px 25px 10px;
+    outline: 0;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+article button::after {
+    content: "";
+    background-color: var(--Background4-);
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 0.4375rem;
+    left: 0.4375rem;
+    transition: 0.5s;
+}
+
+article button:hover::after {
+    top: 0rem;
+    left: 0rem;
+}
