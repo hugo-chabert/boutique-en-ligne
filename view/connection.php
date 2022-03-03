@@ -36,11 +36,11 @@ if(Security::isConnect()){
             <form action="" method="post">
                 <fieldset>
                     <legend>Connectez-vous juste ici</legend>
-                    <?php require_once(__DIR__ . '/errors.php'); ?>
                     <label>Login :</label>
                     <input type="text" name="login" placeholder="Login" autocomplete="off">
                     <label>Mot de passe :</label>
                     <input type="password" name="password" placeholder="Mot de passe" />
+                    <?php require_once(__DIR__ . '/errors.php'); ?>
                 </fieldset>
                 <button type="submit" name="connection">Connexion</button>
                 <p>Vous n'avez pas de compte? <br><a href="register.php">Creez un compte</a></p>

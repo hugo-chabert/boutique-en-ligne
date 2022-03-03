@@ -1,32 +1,32 @@
-
-
 main{
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-around;
 }
-
-form{
+.profile-content{
     display: flex;
-    flex-direction: column;
-    margin-top: 7.8125rem;
-    margin-bottom: 7.8125rem ;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    width: 70%;
+    margin: 8.125rem 50px 6.25rem;
+    gap: 4.375rem;
 }
 
 fieldset{
     display: flex;
     flex-direction: column;
+    border-color: var(--Grey3-);
 }
 
 fieldset legend{
     font-family: Title;
-    font-size: clamp(0.5rem, 2vw, 1.5rem);
+    font-size: clamp(0.7rem, 2vw, 1.5rem);
 }
 
 fieldset label{
     margin-top: 0.9375rem;
     margin-bottom: 0.3125rem;
-    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-size: clamp(0.7rem, 2vw, 1.25rem);
 }
 
 fieldset input{
@@ -38,19 +38,15 @@ fieldset input{
     background-color: var(--Background3-);
     border: none;
 }
-form p {
-    text-align: center;
-    font-size: clamp(1rem, 2vw, 1.25rem);
-}
-/*BUTTON*/
 
-form button {
-    margin: 1.25rem 3.125rem 1.25rem ;
+fieldset button {
+    align-self: center;
+    margin: 20px 5px 20px ;
     font-family: inherit;
-    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-size: clamp(0.5rem, 2vw, 1rem);
     font-weight: 200;
     letter-spacing: 1px;
-    padding: 0.8125rem 3.125rem 0.8125rem;
+    padding: 0.625rem 1.5625rem 0.625rem;
     outline: 0;
     border: 1px solid black;
     cursor: pointer;
@@ -58,7 +54,7 @@ form button {
     background-color: rgba(0, 0, 0, 0);
 }
 
-form button::after {
+fieldset button::after {
     content: "";
     background-color: var(--Background4-);
     width: 100%;
@@ -70,7 +66,7 @@ form button::after {
     transition: 0.5s;
 }
 
-form button:hover::after {
+fieldset button:hover::after {
     top: 0rem;
     left: 0rem;
 }
