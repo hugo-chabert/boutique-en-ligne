@@ -122,7 +122,7 @@ if(isset($_POST['submit_password'])){
                         <input type="password" name="new_password" autocomplete="off" placeholder="Nouveau mot de passe">
                         <label for="confnew_password">Confirmation du nouveau mot de passe</label>
                         <input type="password" name="confnew_password" autocomplete="off" placeholder="Confirmation mot de passe">
-                        <button type="submit" name="submit_password">Modifier password</button>
+                        <button type="submit" name="submit_password">Modifier le mot de passe</button>
 
                     </fieldset>
                     <?php require_once(__DIR__ . '/errors.php'); ?>

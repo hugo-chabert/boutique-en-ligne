@@ -40,7 +40,6 @@ if(Security::isConnect()){
         <?php require('header.php') ?>
         <main>
             <form action="" method="post">
-                <?php require_once(__DIR__ . '/errors.php'); ?>
                 <fieldset>
                     <legend>Saisir toutes vos informations</legend>
                     <label for ="login">Login :</label>
@@ -55,6 +54,7 @@ if(Security::isConnect()){
                     <input id="password" type="password" name="password" placeholder="Mot de passe" />
                     <label for ="conf-password">Confirmez le mot de passe :</label>
                     <input id="conf-password" type="password" name="Cpassword" placeholder="Confirmez le mot de passe" />
+                    <?php require_once(__DIR__ . '/errors.php'); ?>
                 </fieldset>
                 <button type="submit" name="register">Creer un compte</button>
                 <p>Vous avez déjà un compte ? <br><a href="connection.php">Connectez vous</a></p>
