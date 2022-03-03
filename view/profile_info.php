@@ -10,43 +10,13 @@ if(isset($_SESSION['user_item'])){
     $user_info = $_SESSION['user_item']->info_user();
 }
 
-if(isset($_POST['submit_login'])){
-    if(!empty($_POST['login'])){
-        $_SESSION['user_item']->modify_login($_POST['login']);
+if(isset($_POST['submit_infos'])){
+    if(!empty($_POST['login']) && !empty($_POST['firstname']) && !empty($_POST['lastname']) && !empty($_POST['email'])){
+        $_SESSION['user_item']->modify_profil($_POST['login'], $_POST['firstname'], $_POST['lastname'], $_POST['email']);
     }
     else{
-        Toolbox::addMessageAlert("Le champ ne peut être vide.", Toolbox::RED_COLOR);
-        header("Location: ./profile.php");
-        exit();
-    }
-}
-if(isset($_POST['submit_firstname'])){
-    if(!empty($_POST['firstname'])){
-        $_SESSION['user_item']->modify_firstname($_POST['firstname']);
-    }
-    else{
-        Toolbox::addMessageAlert("Le champ ne peut être vide.", Toolbox::RED_COLOR);
-        header("Location: ./profile.php");
-        exit();
-    }
-}
-if(isset($_POST['submit_lastname'])){
-    if(!empty($_POST['lastname'])){
-        $_SESSION['user_item']->modify_lastname($_POST['lastname']);
-    }
-    else{
-        Toolbox::addMessageAlert("Le champ ne peut être vide.", Toolbox::RED_COLOR);
-        header("Location: ./profile.php");
-        exit();
-    }
-}
-if(isset($_POST['submit_email'])){
-    if(!empty($_POST['email'])){
-        $_SESSION['user_item']->modify_email($_POST['email']);
-    }
-    else{
-        Toolbox::addMessageAlert("Le champ ne peut être vide.", Toolbox::RED_COLOR);
-        header("Location: ./profile.php");
+        Toolbox::addMessageAlert("Les champs ne peuvent pas être vide.", Toolbox::RED_COLOR);
+        header("Location: ./profile_info.php");
         exit();
     }
 }
@@ -59,13 +29,13 @@ if(isset($_POST['submit_password'])){
 
         if($_POST['new_password'] !== $_POST['confnew_password']){
             Toolbox::addMessageAlert("Mots de passe différents !", Toolbox::RED_COLOR);
-            header("Location: ./profile.php");
+            header("Location: ./profile_info.php");
             exit();
         }
     }
     else{
         Toolbox::addMessageAlert("Remplir tous les champs.", Toolbox::RED_COLOR);
-        header("Location: ./profile.php");
+        header("Location: ./profile_info.php");
         exit();
     }
 }
@@ -88,7 +58,7 @@ if(isset($_POST['submit_password'])){
 
             <section class="profile-content">
 
-                <form action="profile.php" method="post" >
+                <form action="profile_info.php" method="post" >
 
                     <fieldset>
                         <legend>Modification du login</legend>
@@ -105,14 +75,14 @@ if(isset($_POST['submit_password'])){
                         <label for="email"> Adresse mail </label>
                         <input type="text" name="email" value="<?= $user_info['email'] ?>" autocomplete="off">
 
-                        <button type="submit" name="submit_email">Modifier les infos</button>
+                        <button type="submit" name="submit_infos">Modifier les infos</button>
 
                     </fieldset>
 
                     <?php require_once(__DIR__ . '/errors.php'); ?>
                 </form>
 
-                <form action="profile.php" method="post">
+                <form action="profile_info.php" method="post">
 
                     <fieldset>
                         <legend>Modification du mot de passe</legend>

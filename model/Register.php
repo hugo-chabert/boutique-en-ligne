@@ -81,7 +81,7 @@ class Register{
         }
     }
 
-    public static function info_user_login($login){
+    public static function info_user($login){
         $login_safe = Security::safeHTML($login);
 
         $req = "SELECT * FROM users WHERE login = :login";
@@ -94,28 +94,11 @@ class Register{
         return $results;
     }
 
-    public static function info_user_firstname($firstname){
-        $firstname_safe = Security::safeHTML($firstname);
-
-        //requete sql
-        $req = "SELECT * FROM users WHERE firstname = :firstname";
+    public static function info_user_login($login){
+        $req = "SELECT * FROM users WHERE login = :login";
         $stmt = Database::connect_db()->prepare($req);
         $stmt->execute(array(
-            ":firstname" => $firstname_safe
-        ));
-        $results = $stmt->fetch(PDO::FETCH_ASSOC);
-        $stmt->closeCursor();
-        return $results;
-    }
-
-    public static function info_user_lastname($lastname){
-        $lastname_safe = Security::safeHTML($lastname);
-
-        //requete sql
-        $req = "SELECT * FROM users WHERE lastname = :lastname";
-        $stmt = Database::connect_db()->prepare($req);
-        $stmt->execute(array(
-            ":lastname" => $lastname_safe
+            ":login" => $login
         ));
         $results = $stmt->fetch(PDO::FETCH_ASSOC);
         $stmt->closeCursor();
@@ -123,12 +106,11 @@ class Register{
     }
 
     public static function info_user_email($email){
-        $email_safe = Security::safeHTML($email);
 
         $req = "SELECT * FROM users WHERE email = :email";
         $stmt = Database::connect_db()->prepare($req);
         $stmt->execute(array(
-            ":email" => $email_safe
+            ":email" => $email
         ));
         $results = $stmt->fetch(PDO::FETCH_ASSOC);
         $stmt->closeCursor();

@@ -24,52 +24,33 @@ class User_model{
         return $results;
     }
 
-    public function sql_modify_login($login_safe, $id){
-        $req = "UPDATE users set login = :login WHERE id = :id";
+    public function sql_modify_profile($login, $firstname, $lastname, $email, $id){
+        $req = "UPDATE users set login = :login, firstname = :firstname, lastname = :lastname, email = :email WHERE id = :id";
         $stmt = Database::connect_db()->prepare($req);
         $stmt->execute(array(
-            ":login" => $login_safe,
+            ":login" => $login,
+            ":firstname" => $firstname,
+            ":lastname" => $lastname,
+            ":email" => $email,
             ":id" => $id
         ));
-        $modified = ($stmt->rowCount() > 0);
+        $results = ($stmt->rowCount() > 0);
         $stmt->closeCursor();
-        return $modified;
+        return $results;
     }
 
-    public function sql_modify_firstname($firstname_safe, $id){
-        $req = "UPDATE users set firstname = :firstname WHERE id = :id";
+    public function sql_modify_profile_without_email($login_secure, $prenom_secure, $nom_secure, $id){
+        $req = "UPDATE utilisateurs set login = :login, prenom = :prenom, nom = :nom WHERE id_utilisateur = :id";
         $stmt = Database::connect_db()->prepare($req);
         $stmt->execute(array(
-            ":firstname" => $firstname_safe,
+            ":login" => $login_secure,
+            ":prenom" => $prenom_secure,
+            ":nom" => $nom_secure,
             ":id" => $id
         ));
-        $modified = ($stmt->rowCount() > 0);
+        $estModifier = ($stmt->rowCount() > 0);
         $stmt->closeCursor();
-        return $modified;
-    }
-
-    public function sql_modify_lastname($lastname_safe, $id){
-        $req = "UPDATE users set lastname = :lastname WHERE id = :id";
-        $stmt = Database::connect_db()->prepare($req);
-        $stmt->execute(array(
-            ":lastname" => $lastname_safe,
-            ":id" => $id
-        ));
-        $modified = ($stmt->rowCount() > 0);
-        $stmt->closeCursor();
-        return $modified;
-    }
-
-    public function sql_modify_email($email_safe, $id){
-        $req = "UPDATE users set email = :email WHERE id = :id";
-        $stmt = Database::connect_db()->prepare($req);
-        $stmt->execute(array(
-            ":email" => $email_safe,
-            ":id" => $id
-        ));
-        $modified = ($stmt->rowCount() > 0);
-        $stmt->closeCursor();
-        return $modified;
+        return $estModifier;
     }
 
     public function sql_modify_password($password, $id){

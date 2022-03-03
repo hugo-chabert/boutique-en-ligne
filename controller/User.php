@@ -31,6 +31,106 @@ class User{
         return $results;
     }
 
+    public function modify_profil($login, $firstname, $lastname, $email){
+        $login_safe = Security::safeHTML($login);
+        $firstname_safe = Security::safeHTML($firstname);
+        $lastname_safe = Security::safeHTML($lastname);
+        $email_safe = Security::safeHTML($email);
+        $initial_user = $this->info_user();
+
+        if(filter_var($email_safe, FILTER_VALIDATE_EMAIL)){
+            $initial_user = $this->info_user();
+            if($initial_user['login'] == $login_safe && $initial_user['firstname'] == $firstname_safe && $profil_user_initial['lastname'] == $lastname_safe && $initial_user['email'] == $email_safe){
+                Toolbox::addMessageAlert("Aucune modification !", Toolbox::RED_COLOR);
+                header("Location: ./profile_info.php");
+                exit();
+            }
+            elseif($initial_user['login'] == $login_safe){
+                if($initial_user['email'] == $email_safe){
+                    $this->User_model->sql_modify_profile($login_safe, $firstname_safe, $lastname_safe, $email_safe, $this->id);
+                    $resultat = $this->User_model->sql_info_user_id($this->id);
+                    $_SESSION['user']['email'] = $resultat['email'];
+                    $_SESSION['user']['id'] = $resultat['id'];
+                    Toolbox::addMessageAlert("Modification ok !", Toolbox::GREEN_COLOR);
+                    header("Location: ./profile_info.php");
+                    exit();
+                }
+                elseif(Register::info_user_email($email_safe) == false){
+                    $this->User_model->sql_modify_profile($login_safe, $firstname_safe, $lastname_safe, $email_safe, $this->id);
+                    $resultat = $this->User_model->sql_info_user_id($this->id);
+                    $_SESSION['user']['email'] = $resultat['email'];
+                    $_SESSION['user']['id'] = $resultat['id_utilisateur'];
+                    Toolbox::addMessageAlert("Modification ok !", Toolbox::GREEN_COLOR);
+                    header("Location: ./profile_info.php");
+                    exit();
+                }
+                elseif(Register::info_user_email($email_safe) == true){
+                    Toolbox::addMessageAlert("L'email est déjà utilisé !", Toolbox::RED_COLOR);
+                    header("Location: ./profile_info.php");
+                    exit();
+                }
+            }
+            elseif($initial_user['login'] != $login_safe){
+                if(Register::info_user_login($login_safe) == false){
+                    if($initial_user['email'] == $email_safe){
+                        $this->User_model->sql_modify_profile($login_safe, $firstname_safe, $lastname_safe, $email_safe, $this->id);
+                        $resultat = $this->User_model->sql_info_user_id($this->id);
+                        $_SESSION['user']['email'] = $resultat['email'];
+                        $_SESSION['user']['id'] = $resultat['id'];
+                        Toolbox::addMessageAlert("Modification ok !", Toolbox::GREEN_COLOR);
+                        header("Location: ./profile_info.php");
+                        exit();
+                    }
+                    elseif(Register::info_user_email($email_safe) == false){
+                        $this->User_model->sql_modify_profile($login_safe, $firstname_safe, $lastname_safe, $email_safe, $this->id);
+                        $resultat = $this->User_model->sql_info_user_id($this->id);
+                        $_SESSION['user']['email'] = $resultat['email'];
+                        $_SESSION['user']['id'] = $resultat['id_utilisateur'];
+                        Toolbox::addMessageAlert("Modification ok !", Toolbox::GREEN_COLOR);
+                        header("Location: ./profile_info.php");
+                        exit();
+                    }
+                    elseif(Register::info_user_email($email_safe) == true){
+                        Toolbox::addMessageAlert("L'email est déjà utilisé !", Toolbox::RED_COLOR);
+                        header("Location: ./profile_info.php");
+                        exit();
+                    }
+                }
+                elseif(Register::info_user_login($login_safe) == true){
+                    Toolbox::addMessageAlert("Le login est déjà utilisé !", Toolbox::RED_COLOR);
+                        header("Location: ./profile_info.php");
+                        exit();
+                }
+            }
+        }
+        else{
+            Toolbox::addMessageAlert("Email non valide !", Toolbox::RED_COLOR);
+            header("Location: ./profile_info.php");
+            exit();
+        }
+
+/*
+        if($initial_user['login'] == $login_safe) {
+            Toolbox::addMessageAlert("Aucune modification !", Toolbox::RED_COLOR);
+            header("Location: ./profile.php");
+            exit();
+        }
+        elseif(Register::info_user_login($login_safe) == false){
+            $this->User_model->sql_modify_login($login_safe, $this->id);
+            $results = $this->User_model->sql_info_user_id($this->id);
+            $_SESSION['user']['login'] = $results['login'];
+            $_SESSION['user']['id'] = $results['id'];
+            Toolbox::addMessageAlert("Modification ok !", Toolbox::GREEN_COLOR);
+            header("Location: ./profile.php");
+            exit();
+        }
+        elseif(Register::info_user_login($login_safe) == true){
+            Toolbox::addMessageAlert("Ce login est déjà utilisé !", Toolbox::RED_COLOR);
+            header("Location: ./profile.php");
+            exit();
+        }*/
+    }
+
     public function modify_login($login){
         $login_safe = Security::safeHTML($login);
         $initial_user = $this->info_user();
