@@ -52,32 +52,40 @@ if(isset($_POST["submit"]) && !empty($_FILES["my_image"]["name"]) && !empty($_PO
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>Gestion des articles</title>
-</head>
-<body>
-    <?php require("header.php");?>
-    <main>
-        <form action="" method="post" enctype="multipart/form-data">
-            <label>Nom de l'article :</label>
-            <input type="text" name="name" placeholder="Entrez le nom de l'article" />
-            <label>Description :</label>
-            <input type="text" name="description" placeholder="Entrez la description" />
-            <label>Prix :</label>
-            <input type="text" name="price" placeholder="Entrez le prix" />
-            <label>Stocks :</label>
-            <input type="text" name="quantity" placeholder="Entrez les stocks" />
-            <input type="file" name="my_image">
-            <select name="categories" size="1">
-                <?php foreach($categories_info as $c){
-                    echo '<option value="'.$c["id"].'">'.$c["name"];
-                }?>
-            </select>
-            <input type="submit" name="submit" value="Envoyer">
-            <?php require_once(__DIR__ . '/errors.php'); ?>
-        </form>
-    </main>
-    <?php require("footer.php")?>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../public/css/admin_item.css">
+        <link rel="stylesheet" href="../public/css/root&font.css">
+        <title>Gestion des articles</title>
+    </head>
+    <body>
+        <?php require("header.php");?>
+        <main>
+        <?php require("side_nav.php");?>
+            <section class="profile-content">
+                <form action="" method="post" enctype="multipart/form-data">
+                    <label>Nom de l'article :</label>
+                    <input type="text" name="name" placeholder="Entrez le nom de l'article" />
+                    <label>Description :</label>
+                    <textarea type="text" name="description" placeholder="Entrez la description" ></textarea>
+                    <label>Prix :</label>
+                    <input type="text" name="price" placeholder="Entrez le prix" />
+                    <label>Stocks :</label>
+                    <input type="text" name="quantity" placeholder="Entrez les stocks" />
+                    <input type="file" name="my_image">
+                    <select name="categories" size="1" placeholder="Selectionner une catégorie">
+                    <option value="">--Selectionner une catégorie--</option>
+                        <?php foreach($categories_info as $c){
+                            echo '<option value="'.$c["id"].'">'.$c["name"];
+                        }?>
+                    </select>
+                    <button type="submit" name="submit" > Envoyer </button>
+                    <?php require_once(__DIR__ . '/errors.php'); ?>
+                </form>
+            </section>
+        </main>
+        <?php require('footer.php')?>
+    </body>
 </html>
