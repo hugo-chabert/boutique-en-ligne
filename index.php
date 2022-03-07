@@ -23,7 +23,6 @@ if (isset($_SESSION['user'])) {
 <body>
     <?php require("view/header_index.php");?>
     <main>
-        
     </main>
     <?php require("view/footer_index.php");?>
 </body>

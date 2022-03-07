@@ -1,19 +1,24 @@
 :root {
     
     --Transparent-: rgba(255, 255, 255, 0);
-    --LightShadow-: rgba(0, 0, 0, 0.15);
+    --LightShadow-: rgba(0, 0, 0, 0.253);
     --Shadow-: rgba(0, 0, 0, 0.39);
     --DarkShadow-: rgba(0, 0, 0, 0.466);
     --White-: #FFFFFF;
     --Black-: #000000;
+    --DarkGrey-: #202020;
     --Grey-: #757575;
+    --Grey2-: #9c9c9cf3;
+    --Grey3-: #fffffff3;
     
+    --Background-: #f5eaea;
     --Background0-: #E7DADA;
     --Background1-: #DFCECE;
     --Background2-: #D7C1C1;
     --Background3-: #CFB4B4;
     --Background4-: #C7A8A8;
     --Background5-: #BF9B9B;
+    --BackgroundTrans-: #bf9b9b91;
     
     --Button-: #55565d;
 
