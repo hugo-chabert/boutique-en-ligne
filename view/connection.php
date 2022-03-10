@@ -36,9 +36,9 @@ if(Security::isConnect()){
             <form action="" method="post">
                 <fieldset>
                     <legend>Connectez-vous juste ici</legend>
-                    <label>Login :</label>
+                    <label for='login'>Login :</label>
                     <input type="text" name="login" placeholder="Login" autocomplete="off">
-                    <label>Mot de passe :</label>
+                    <label for='password'>Mot de passe :</label>
                     <input type="password" name="password" placeholder="Mot de passe" />
                     <?php require_once(__DIR__ . '/errors.php'); ?>
                 </fieldset>

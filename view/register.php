@@ -41,19 +41,27 @@ if(Security::isConnect()){
         <main>
             <form action="" method="post">
                 <fieldset>
+
                     <legend>Saisir toutes vos informations</legend>
+
                     <label for ="login">Login :</label>
                     <input id="login" type="text" name="login" placeholder="Login" />
+
                     <label for ="firstname">Prénom :</label>
                     <input id="firstname" type="text" name="firstname" placeholder="Prenom" autocomplete="off">
+
                     <label for ="lastname">Nom :</label>
                     <input id="lastname" type="text" name="lastname" placeholder="Nom" autocomplete="off">
+
                     <label for ="email">Email :</label>
                     <input id="email" type="text" name="email" placeholder="Email" autocomplete="off">
+
                     <label for ="password">  Mot de passe :</label>
                     <input id="password" type="password" name="password" placeholder="Mot de passe" />
+
                     <label for ="conf-password">Confirmez le mot de passe :</label>
                     <input id="conf-password" type="password" name="Cpassword" placeholder="Confirmez le mot de passe" />
+
                     <?php require_once(__DIR__ . '/errors.php'); ?>
                 </fieldset>
                 <button type="submit" name="register">Creer un compte</button>
