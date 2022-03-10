@@ -20,6 +20,16 @@ class Cart{
         return $results;
     }
 
+    public function change_quantity($id, $quantity){
+        $results = $this->Cart_model->sql_change_quantity($id, $quantity);
+        return $results;
+    }
+
+    public function delete($id){
+        $results = $this->Cart_model->sql_delete($id);
+        return $results;
+    }
+
 }
 
 ?>
