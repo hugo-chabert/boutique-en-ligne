@@ -12,7 +12,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: var(--Background-);
+    background-color: var(--White-);
 }
 
 .content-ctc {
@@ -53,7 +53,7 @@
 .contain-ctc .contactInfo .box .icon-ctc{
     min-width: 60px;
     height: 60px;
-    background: var(--White-);
+    background: var(--Background-);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,7 +81,7 @@
 {
     width: 40%;
     padding: 40px;
-    background: var(--White-);
+    background: var(--Background-);
     border-radius: 2%;
 }
 
@@ -99,6 +99,7 @@
     margin-top: 10px;
 }
 .contactForm .inputBox input,
+.contactForm .inputBox select,
 .contactForm .inputBox textarea {
     width: 100%;
     padding: 5px 0;
@@ -108,6 +109,7 @@
     border-bottom: 2px solid var(--Grey-);
     outline: none;
     resize: none;
+    background-color: var(--Background-);
 }
 
 .contactForm .inputBox span
@@ -131,16 +133,6 @@
     font-size: 12px;
     transform: translateY(-20px);
 }
-.contactForm .inputBox input[type="submit"]
-{
-    width: 100px;
-    background: var(--Color2-);
-    color: var(--White-);
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    font-size: 18px;
-}
 
 @media (max-width: 991px)
 {
@@ -155,7 +147,7 @@
     }
     .contain-ctc .contactInfo,
     .contain-ctc {
-      width: 100%;
+        width: 100%;
     }
     .contain-ctc .contactInfo .box {
         display: flex;
@@ -181,7 +173,7 @@
     }
     .contain-ctc .contactInfo,
     .contain-ctc {
-      width: 100%;
+        width: 100%;
     }
     .contain-ctc .contactInfo .box {
         display: flex;
@@ -191,14 +183,4 @@
     .contactForm {
         width: 90%;
     }
-    .contactForm .inputBox input[type="submit"]
-{
-    width: 100px;
-    background: var(--Color2-);
-    color: var(--White-);
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    font-size: 18px;
-}
 }

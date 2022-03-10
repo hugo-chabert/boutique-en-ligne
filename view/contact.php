@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,11 +15,11 @@
     <?php require("header.php")?>
     <main role="main">
         <section class="contact">
-            <div class="content-ctc">
+            <article class="content-ctc">
                 <h2>Contactez-nous</h2>
                 <p>Si vous avez une suggestion ou tout autre envie.</p>
-            </div>
-            <div class="contain-ctc">
+            </article>
+            <article class="contain-ctc">
                 <div class="contactInfo">
                     <div class="box">
                         <div class="icon-ctc">
@@ -25,7 +27,7 @@
                         </div>
                         <div class="txt-ctc">
                             <h3>Adresse</h3 >
-                            <p>292 Avenue des africains</p>
+                            <p>8 Rue d'hozier, 13002 Marseille</p>
                         </div>
                     </div>
                     <div class="box">
@@ -34,7 +36,7 @@
                         </div>
                         <div class="txt-ctc">
                             <h3>Email</h3 >
-                            <p>remi.djambe@yahoo.fr</p>
+                            <p>takahiro__arts@gmail.com</p>
                         </div>
                     </div>
                     <div class="box">
@@ -43,7 +45,7 @@
                         </div>
                         <div class="txt-ctc">
                             <h3>Téléphone</h3 >
-                            <p>06.87.75.65.75</p> 
+                            <p>07.69.02.23.00</p>
                         </div>
                     </div>
                 </div>
@@ -51,23 +53,38 @@
                     <form>
                         <h2>Envoyer un message</h2>
                         <div class="inputBox">
-                            <input type="text" name="" required="required">
-                            <span>Nom entier</span>
+                            <input type="text" name="firstname" required="required">
+                            <span>Nom</span>
                         </div>
                         <div class="inputBox">
-                            <input type="text" name="" required="required">
+                            <input type="text" name="lastname" required="required">
+                            <span>Prénom</span>
+                        </div>
+                        <div class="inputBox">
+                            <input type="text" name="email" required="required">
                             <span>Email</span>
+                        </div>
+                        <div class="inputBox">
+                            <select name="">
+                                <option value="">-Selectionner un motif-</option>
+                                <option value="">-Site-</option>
+                                <option value="">-Livraison-</option>
+                                <option value="">-Service-</option>
+                                <option value="">-Qualité-</option>
+                                <option value="">-Satisfaction-</option>
+                                <option value="">-Autre-</option>
+                            </select>
                         </div>
                         <div class="inputBox">
                             <textarea required="required"></textarea>
                             <span>Votre message</span>
                         </div>
                         <div class="inputBox">
-                            <input type="submit" name="" value="send">
+                            <button type="submit" name=""> Envoyer </button>
                         </div>
                     </form>
                 </div>
-            </div>
+            </article>
         </section>
     </main>
     <?php require("footer.php")?>
