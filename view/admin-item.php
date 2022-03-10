@@ -15,7 +15,7 @@ if($_SESSION['user']['rights'] != 1){
 $item = new Item();
 $categories_info = $item->info_categories();
 
-if(isset($_POST["submit"]) && !empty($_FILES["my_image"]["name"]) && !empty($_POST['name']) && !empty($_POST['description']) && !empty($_POST['price']) && !empty($_POST['categories']) && !empty($_POST['quantity'])){
+if(isset($_POST["submit"]) && !empty($_FILES["my_image"]["name"]) && !empty($_POST['name']) && !empty($_POST['description']) && !empty($_POST['price']) && !empty($_POST['categories'])){
     $img_name = $_FILES['my_image']['name'];
 	$img_size = $_FILES['my_image']['size'];
 	$tmp_name = $_FILES['my_image']['tmp_name'];
@@ -33,7 +33,7 @@ if(isset($_POST["submit"]) && !empty($_FILES["my_image"]["name"]) && !empty($_PO
                     $new_img_name = uniqid("IMG-", true).'.'.$img_ex_lc;
                     $img_upload_path = '../public/img/'.$new_img_name;
                     move_uploaded_file($tmp_name, $img_upload_path);
-                    Item::create($_POST['name'], $_POST['description'], $_POST['price'], $new_img_name, $_POST['categories'], $_POST['quantity']);
+                    Item::create($_POST['name'], $_POST['description'], $_POST['price'], $new_img_name, $_POST['categories']);
                 }
                 else{
                     Toolbox::addMessageAlert("Nom d'article déjà existant !", Toolbox::GREEN_COLOR);
@@ -73,7 +73,6 @@ if(isset($_POST["submit"]) && !empty($_FILES["my_image"]["name"]) && !empty($_PO
                     <label>Prix :</label>
                     <input type="text" name="price" placeholder="Entrez le prix" />
                     <label>Stocks :</label>
-                    <input type="text" name="quantity" placeholder="Entrez les stocks" />
                     <input type="file" name="my_image">
                     <select name="categories" size="1" placeholder="Selectionner une catégorie">
                     <option value="">--Selectionner une catégorie--</option>

@@ -38,5 +38,16 @@ class Cart_model{
         }
     }
 
+    public function sql_display_items($id_user){
+        $req = "SELECT * FROM carts c INNER JOIN items i WHERE c.id_user = :id_user AND c.id_item = i.id";
+        $stmt = Database::connect_db()->prepare($req);
+        $stmt->execute(array(
+            ":id_user" => $id_user
+        ));
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+        return $results;
+    }
+
 }
 ?>

@@ -51,15 +51,9 @@ if(isset($_POST['cart'])){
                         <h2> <?php echo $item_info['name'];?> </h2>
                         <h3> <?php echo $item_info['price'];?> €</h3>
                         <p> <?php echo $item_info['description'];?> </p>
-                        <?php
-                        if($item_info['quantity'] > 0){?>
-                            <form method="post">
-                                <button class = 'button' type="submit" name="cart">Ajouter au panier</button>
-                            </form><?php
-                        }
-                        else{
-                            echo 'Article epuisé';
-                        }?>
+                        <form method="post">
+                            <button class = 'button' type="submit" name="cart">Ajouter au panier</button>
+                        </form>
                     </div>
                 </article>
             </section>
@@ -71,13 +65,11 @@ if(isset($_POST['cart'])){
                 }
 
                 if(Security::isConnect()){?>
-
                     <form method="post">
                         <label for='comment'>Votre commentaire : </label>
                         <textarea class = "send_com" name="comment" rows="10%" cols="90%"></textarea>
                         <button class = 'button' type="submit" name="send"> Envoyer </button>
                     </form>
-
                 <?php }
                 else{?>
                     <h2>Veuillez vous connecter pour ecrire un commentaire !!</h2>

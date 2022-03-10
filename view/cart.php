@@ -10,6 +10,9 @@ if(!Security::isConnect()){
     header('Location:../index.php');
 }
 
+$cart = new Cart();
+$items = $cart->display_items($_SESSION['user']['id']);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,8 +23,16 @@ if(!Security::isConnect()){
     <?php require('header.php');?>
     <main>
         <form action="" method="post">
-        <input type="checkbox" id="subscribeNews" name="subscribe" value="newsletter">
-        <label for="subscribeNews">Souhaitez-vous vous abonner à la newsletter ?</label>
+            <?php
+            foreach($items AS $i){
+                ?><div><?php
+                echo '<input type="checkbox" id="item'.$i['id'].'" name="item'.$i['id'].'" value="'.$i['id'].'"></br>';
+                echo '<label for="item'.$i['id'].'">'.$i['name'].'</label></br>';
+                echo 'Quantité : '.$i['quantity'];
+                echo '</br>';
+                ?></div><?php
+            }
+            ?>
         </form>
     </main>
     <?php require('footer.php');?>

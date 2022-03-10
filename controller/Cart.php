@@ -15,6 +15,11 @@ class Cart{
         return $results;
     }
 
+    public function display_items($id_user){
+        $results = $this->Cart_model->sql_display_items($id_user);
+        return $results;
+    }
+
 }
 
 ?>
