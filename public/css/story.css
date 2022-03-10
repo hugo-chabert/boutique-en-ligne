@@ -1,0 +1,191 @@
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:48vw;
+    color:#eee;
+}
+
+.header:after{
+    content:"";
+    width:100%;
+    height:100%;
+    position:absolute;
+    bottom:0;
+    left:0;
+    z-index:-1;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.12) 40%,rgba(27,32,48,1) 100%);
+}
+
+.header:before{
+    content:"";
+    width:100%;
+    height:200%;
+    position:absolute;
+    top:0;
+    left:0;
+    scale : (1.0, 1.0);
+    transform: translateZ(0);
+    background:#1B2030 url(../img/Moi.PNG) 50% 0 no-repeat;
+    background-size:100%;
+    background-attachment:fixed;
+    animation: grow 30s  linear 10ms infinite;
+    transition:all 0.4s ease-in-out;
+    z-index:-2
+}
+
+.header a{
+    color:#eee;
+    text-decoration: none;
+}
+.header h1{
+    font-size: 3em;
+    color: var(--White-);
+    text-shadow: 3px 3px 4px var(--Black-);
+    font-size: clamp(1rem, 2vw, 3rem);
+}
+@keyframes grow{
+    0% { transform: scale(1) translateY(0px)}
+    50% { transform: scale(1.2) translateY(-400px)}
+}
+main section h2{
+    text-align: center;
+    font-size: clamp(1rem, 2vw, 2rem);
+    margin-top: 9.375rem;
+}
+
+.section-pres p{
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    text-align: justify;
+    margin: 120px 150px 200px;
+}
+
+.section-pres a{
+    text-decoration: none;
+    color: var(--Background5-);
+    transition: all .2s ease-in-out;
+}
+.section-pres a:hover{
+    color: var(--Hover-);
+}
+
+.parallax{
+    background:url(https://i.pinimg.com/564x/2a/96/85/2a9685a8d22016299fe84fd2db0ed839.jpg) no-repeat center ;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 25rem;
+    width: 90%;
+    align-self: center;
+}
+.blur{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.459);
+}
+.section-real{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.bloc-real
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin-top: 6.25rem;
+    margin-bottom: 3.125rem;
+}
+.bloc-real .card
+{
+    position: relative;
+    width: 18.75rem;
+    height: 18.75rem;
+    margin: 0.9375rem;
+    overflow: hidden;
+}
+.bloc-real .card .imgBx,
+.container .card .contentBx
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.bloc-real .card .imgBx img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.bloc-real .card .contentBx::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    transform: scaleX(0);
+    transition: transform 0.5s ease-in-out;
+    transform-origin: right;
+    transition-delay: 0.5s;
+}
+.bloc-real .card:hover .contentBx::before
+{
+    transform: scaleX(1);
+    transition: transform 0.5s ease-in-out;
+    transform-origin: left;
+    transition-delay: 0s;
+}
+.bloc-real .card .contentBx
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bloc-real .card .contentBx .content
+{
+    position: relative;
+    padding: 1.875rem;
+    z-index: 1;
+    transition: 0.5s;
+    transform: translateX(-300px);
+    transition-delay: 0s;
+}
+.bloc-real .card:hover .contentBx .content
+{
+    transform: translateX(0px);
+    transition-delay: 0.5s;
+}
+.bloc-real .card .contentBx .content h3
+{
+    font-size: 1.3em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.bloc-real .card .contentBx .content p
+{
+    font-size: 1em;
+    line-height: 1.4em;
+    font-weight: 300;
+}

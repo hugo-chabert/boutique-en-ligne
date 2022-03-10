@@ -1,0 +1,72 @@
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.profile-content{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    width: 70%;
+    margin: 8.125rem 50px 6.25rem;
+    gap: 4.375rem;
+}
+
+fieldset{
+    display: flex;
+    flex-direction: column;
+    border-color: var(--Grey3-);
+}
+
+fieldset legend{
+    font-family: Title;
+    font-size: clamp(0.7rem, 2vw, 1.5rem);
+}
+
+fieldset label{
+    margin-top: 0.9375rem;
+    margin-bottom: 0.3125rem;
+    font-size: clamp(0.7rem, 2vw, 1.25rem);
+}
+
+fieldset input{
+    font-size: clamp(0.5rem, 2vw, 1.25rem);
+    height: 1.875rem;
+    margin-bottom: 0.3125rem;
+    color: var(--Black-);
+    font-family: Texte;
+    background-color: var(--Background3-);
+    border: none;
+}
+
+fieldset button {
+    align-self: center;
+    margin: 20px 5px 20px ;
+    font-family: inherit;
+    font-size: clamp(0.5rem, 2vw, 1rem);
+    font-weight: 200;
+    letter-spacing: 1px;
+    padding: 0.625rem 1.5625rem 0.625rem;
+    outline: 0;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+fieldset button::after {
+    content: "";
+    background-color: var(--Background4-);
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 0.4375rem;
+    left: 0.4375rem;
+    transition: 0.5s;
+}
+
+fieldset button:hover::after {
+    top: 0rem;
+    left: 0rem;
+}
