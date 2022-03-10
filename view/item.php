@@ -1,6 +1,7 @@
 <?php
 
 require_once(__DIR__ . '/../controller/Item.php');
+require_once(__DIR__ . '/../controller/Cart.php');
 require_once(__DIR__ . '/../controller/Comment.php');
 require_once(__DIR__ . '/../controller/Toolbox.php');
 require_once(__DIR__ . '/../controller/Security.php');
@@ -23,6 +24,11 @@ if(empty($_GET['id'])){
     exit();
 }
 
+if(isset($_POST['cart'])){
+    $cart = new Cart();
+    $add_to_cart = $cart->add_to_cart($_SESSION['user']['id'] ,$item_info['id']);
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -40,6 +46,15 @@ if(empty($_GET['id'])){
         Categorie : <?php echo $category['name'];?></br>
         Stocks : <?php echo $item_info['quantity'];?> disponibles</br>
         Image : <?php echo '<img class= image src="../public/img/'.$item_info['image'].'">';?></br>
+        <?php
+        if($item_info['quantity'] > 0){?>
+            <form method="post">
+                <button class = 'button' type="submit" name="cart">Ajouter au panier</button>
+            </form><?php
+        }
+        else{
+            echo 'Article epuisé';
+        }?>
         <div class="comments">
             <?php
             foreach($comment_info as $com){
