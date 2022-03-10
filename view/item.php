@@ -52,6 +52,7 @@ if(empty($_GET['id'])){
                                 else {echo '';}
                             ?>
                         </p>
+                        <div class='rating-box'><h1>Rating box test</h1></div>
                     </div>
                 </article>
                 <article>
@@ -59,25 +60,33 @@ if(empty($_GET['id'])){
                     <a href=""><button>Ajouter au panier </button></a>
                 </article>
             </section>
-
+            <hr>
             <section>
-                <?php
-                foreach($comment_info as $com){
-                    echo $com['text'];?></br><?php
-                }
 
-                if(Security::isConnect()){?>
+                <article>
 
-                    <form method="post">
-                        <label for='comment'>Votre commentaire : </label>
-                        <textarea class = "send_com" name="comment" rows="10%" cols="90%"></textarea>
-                        <button class = 'button' type="submit" name="send"> Envoyer </button>
-                    </form>
+                </article>
 
-                <?php }
-                else{?>
-                    <h2>Veuillez vous connecter pour ecrire un commentaire !!</h2>
-                <?php } ?>
+                <article>
+                    <?php
+                        foreach($comment_info as $com){?>
+                        <p> <?php echo $com['text'];?></p>
+                    <?php
+                    }
+
+                    if(Security::isConnect()){?>
+
+                        <form method="post">
+                            <label for='comment'>Ecrivez votre meilleur commentaire pour cette article: </label>
+                            <textarea class = "send_com" name="comment" rows="10%" cols="90%"></textarea>
+                            <button class = 'button' type="submit" name="send"> Envoyer </button>
+                        </form>
+
+                    <?php }
+                    else{?>
+                        <h2>Veuillez vous connecter pour ecrire un commentaire !!</h2>
+                    <?php } ?>
+                </article>
             </section>
 
         </main>
