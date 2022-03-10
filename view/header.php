@@ -15,7 +15,7 @@
                 <?php if (isset($_SESSION['user'])) { ?>
             </ul>
             <ul class="ul-menu-spe">
-                <li> <a href=""><img src="https://img.icons8.com/pastel-glyph/64/000000/shopping-trolley--v2.png" width="20px"/>   Panier</a> </li>
+                <li> <a href="cart.php"><img src="https://img.icons8.com/pastel-glyph/64/000000/shopping-trolley--v2.png" width="20px"/>   Panier</a> </li>
                 <li> <a href="profile.php"><img src="https://img.icons8.com/ios/50/000000/gender-neutral-user.png" width="20px"/>  <?php echo $_SESSION['user']['login'];?></a> </li>
                 <li> <a href="disconnect.php"> <img src="https://img.icons8.com/material/50/000000/exit.png" width="20px"/>   Deconnexion</a> </li>
                 <?php  } ?>
