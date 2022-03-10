@@ -1,0 +1,35 @@
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 6.25rem;
+}
+
+section:nth-child(1){
+    display: flex;
+    flex-direction: column;
+    margin-top: 4.375rem;
+}
+section article:nth-child(1){
+    display: flex;
+    flex-direction: row;
+    margin-top: 4.375rem;
+}
+
+section article h2{
+    font-size: clamp(1rem, 2vw, 1.85rem);
+    margin: 0 1.25rem 10px;
+}
+
+section article h3{
+    font-size: clamp(0.75rem, 2vw, 1.5rem);
+    margin: 0 1.25rem 1.25rem;
+}
+
+section article p{
+    font-size: clamp(0.5rem, 2vw, 1.25rem);
+    margin: 0 1.25rem 1.25rem;
+    text-align: justify;
+}
+

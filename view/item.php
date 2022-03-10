@@ -26,39 +26,61 @@ if(empty($_GET['id'])){
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="../public/css/temp.css">
-    <title>Article</title>
-</head>
-<body>
-    <?php require("header.php");?>
-    <main>
-        Nom : <?php echo $item_info['name'];?><br/>
-        Description : <?php echo $item_info['description'];?></br>
-        Prix : <?php echo $item_info['price'];?> €</br>
-        Categorie : <?php echo $category['name'];?></br>
-        Stocks : <?php echo $item_info['quantity'];?> disponibles</br>
-        Image : <?php echo '<img class= image src="../public/img/'.$item_info['image'].'">';?></br>
-        <div class="comments">
-            <?php
-            foreach($comment_info as $com){
-                echo $com['text'];?></br><?php
-            }
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../public/css/item.css">
+        <link rel="stylesheet" href="../public/css/root&font.css">
+        <title>Article</title>
+    </head>
+    <body>
+        <?php require("header.php");?>
+        <main>
 
-            if(Security::isConnect()){?>
-                <form method="post">
-                    <a class="comm" >Votre commentaire :<br/>
+            <section>
+                <article>
+                    <?php echo '<img src="../public/img/'.$item_info['image'].'">';?>
+                    <div>
+                        <h2> <?php echo $item_info['name'];?> </h2>
+                        <h3> <?php echo $item_info['price'];?> €</h3>
+                        <p> <?php echo $item_info['description'];?> </p>
+                        <p>
+                            <?php
+                                if ($item_info['quantity'] == 0){echo 'Article indisponible'; }
+                                elseif($item_info['quantity'] < 5) { echo $item_info['quantity'].' restant'; }
+                                else {echo '';}
+                            ?>
+                        </p>
+                    </div>
+                </article>
+                <article>
+                    <a href=""><button>Acheter l'article</button></a>
+                    <a href=""><button>Ajouter au panier </button></a>
+                </article>
+            </section>
+
+            <section>
+                <?php
+                foreach($comment_info as $com){
+                    echo $com['text'];?></br><?php
+                }
+
+                if(Security::isConnect()){?>
+
+                    <form method="post">
+                        <label for='comment'>Votre commentaire : </label>
                         <textarea class = "send_com" name="comment" rows="10%" cols="90%"></textarea>
-                    </a>
-                    <button class = 'button' type="submit" name="send"> Envoyer </button>
-                </form>
-            <?php }
-            else{?>
-                Veuillez vous connecter pour ecrire un commentaire !!
-            <?php } ?>
-        </div>
-    </main>
-    <?php require("footer.php")?>
-</body>
+                        <button class = 'button' type="submit" name="send"> Envoyer </button>
+                    </form>
+
+                <?php }
+                else{?>
+                    <h2>Veuillez vous connecter pour ecrire un commentaire !!</h2>
+                <?php } ?>
+            </section>
+
+        </main>
+        <?php require("footer.php")?>
+    </body>
 </html>
