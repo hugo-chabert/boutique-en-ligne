@@ -36,20 +36,9 @@ main{
     background-color: var(--Background3-);
     border: none;
 }
-.profile-content textarea{
-    font-size: clamp(0.5rem, 2vw, 1.25rem);
-    height: 12.5rem;
-    min-width: 18.75rem;
-    max-width: 28.125rem;
-    margin-bottom: 0.3125rem;
-    color: var(--Black-);
-    font-family: Texte;
-    background-color: var(--Background3-);
-    border: none;
-}
 
 .profile-content button {
-    align-self: center;
+    align-self: start;
     margin: 20px 5px 20px ;
     font-family: inherit;
     font-size: clamp(0.5rem, 2vw, 1rem);
