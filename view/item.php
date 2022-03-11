@@ -32,7 +32,7 @@ if(empty($_GET['id'])){
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../public/css/item.css">
         <link rel="stylesheet" href="../public/css/root&font.css">
-        <title>Article</title>
+        <title><?php echo $item_info['name']; ?></title>
     </head>
     <body>
         <?php require("header.php");?>

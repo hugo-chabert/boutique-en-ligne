@@ -15,7 +15,7 @@ $items_info = $item->info_items();
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Articles</title>
+    <title>Boutique</title>
     <link rel="stylesheet" href="../public/css/temp.css">
 </head>
 <body>
