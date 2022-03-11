@@ -1,0 +1,219 @@
+main * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contact {
+    position: relative;
+    min-height: 100vh;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--White-);
+}
+
+.content-ctc {
+    padding-bottom: 50px;
+}
+
+.contact .content-ctc {
+    max-width: 800px;
+    text-align: center;
+}
+
+.contact .content-ctc h2{
+    font-size: 36px;
+    font-weight: 500;
+    color: var(--Black-);
+}
+
+.contain-ctc {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.contain-ctc .contactInfo {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contain-ctc .contactInfo .box{
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+}
+
+.contain-ctc .contactInfo .box .icon-ctc{
+    min-width: 60px;
+    height: 60px;
+    background: var(--Background-);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 22px;
+}
+
+.contain-ctc .contactInfo .box .txt-ctc
+{
+    display: flex;
+    margin-left: 20px;
+    font-size: 16px;
+    color: var(--Grey-);
+    flex-direction: column;
+    font-weight: 300;
+}
+
+.contain-ctc .contactInfo .box .txt-ctc h3
+{
+    font-weight: 500;
+    color: var(--Color2-);
+}
+
+.contactForm
+{
+    width: 40%;
+    padding: 40px;
+    background: var(--Background-);
+    border-radius: 2%;
+}
+
+.contactForm h2
+{
+    font-size: 30px;
+    color: #333;
+    font-weight: 500;
+}
+
+.contactForm .inputBox
+{
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+.contactForm .inputBox input,
+.contactForm .inputBox select,
+.contactForm .inputBox textarea {
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin : 10px 0;
+    border: none;
+    border-bottom: 2px solid var(--Grey-);
+    outline: none;
+    resize: none;
+    background-color: var(--Background-);
+}
+
+.contactForm .inputBox span
+{
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    font-size: 16px;
+    margin : 10px 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: var(--Grey-);
+}
+
+.contactForm .inputBox input:focus ~ span,
+.contactForm .inputBox input:valid ~ span,
+.contactForm .inputBox textarea:focus ~ span,
+.contactForm .inputBox textarea:valid ~ span
+{
+    color: var(--Color3-);
+    font-size: 12px;
+    transform: translateY(-20px);
+}
+
+.inputBox button {
+    align-self: center;
+    margin: 20px 5px 20px ;
+    font-family: inherit;
+    font-size: clamp(0.5rem, 2vw, 1rem);
+    font-weight: 200;
+    letter-spacing: 1px;
+    padding: 10px 25px 10px;
+    outline: 0;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.inputBox button::after {
+    content: "";
+    background-color: var(--Background4-);
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 0.4375rem;
+    left: 0.4375rem;
+    transition: 0.5s;
+}
+
+.inputBox button:hover::after {
+    top: 0rem;
+    left: 0rem;
+}
+
+
+@media (max-width: 991px)
+{
+    .contact{
+        padding:40px;
+    }
+    .contain-ctc {
+        flex-direction: column;
+    }
+    .contain-ctc .contactInfo {
+        margin-bottom: 40px;
+    }
+    .contain-ctc .contactInfo,
+    .contain-ctc {
+        width: 100%;
+    }
+    .contain-ctc .contactInfo .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contactForm {
+        width: 60%;
+    }
+}
+
+@media (max-width: 425px)
+{
+    .contact{
+        padding:40px;
+    }
+    .contain-ctc {
+        flex-direction: column;
+    }
+    .contain-ctc .contactInfo {
+        margin-bottom: 40px;
+    }
+    .contain-ctc .contactInfo,
+    .contain-ctc {
+        width: 100%;
+    }
+    .contain-ctc .contactInfo .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .contactForm {
+        width: 90%;
+    }
+}

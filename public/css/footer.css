@@ -13,13 +13,16 @@ footer li a{
     letter-spacing: 1px;
     color: var(--Black-);
     transition: all .2s ease-in-out;
+    font-size: clamp(0.5rem, 2vw, 1rem);
 }
 .part-up section p{
+    font-size: clamp(0.5rem, 2vw, 1rem);
     letter-spacing: 1px;
 }
 footer div div section h2{
     color: var(--Black-);
     letter-spacing: 1px;
+    font-size: clamp(1rem, 2vw, 1.5rem);
 }
 .container-footer{
     width: 100%;
