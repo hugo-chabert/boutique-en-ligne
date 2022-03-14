@@ -1,4 +1,24 @@
-<?php session_start(); ?>
+<?php
+
+require_once(__DIR__ . '/../model/Comment_model.php');
+require_once(__DIR__ . '/../controller/Comment.php');
+require_once(__DIR__ . '/../controller/Toolbox.php');
+require_once(__DIR__ . '/../controller/Security.php');
+
+session_start();
+
+if(Security::isConnect()){
+    if(isset($_POST["send"]) && $_POST["text"] != NULL){
+        Comment_model::write_advice($_POST['text'], $_POST['why'], $_SESSION['user']['id']);
+    }
+}
+else{
+    if(isset($_POST['send']) && $_POST['text'] != NULL && $_POST['firstname'] != NULL && $_POST['lastname'] != NULL && $_POST['email'] != NULL){
+        Comment_model::write_advice_noid($_POST['text'], $_POST['why'], $_POST['firstname'], $_POST['lastname'], $_POST['email']);
+    }
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -50,8 +70,10 @@
                     </div>
                 </div>
                 <div class="contactForm">
-                    <form>
+                    <form action="" method="post">
                         <h2>Envoyer un message</h2>
+                        <?php if(!Security::isConnect()){
+                        ?>
                         <div class="inputBox">
                             <input type="text" name="firstname" required="required">
                             <span>Nom</span>
@@ -64,23 +86,24 @@
                             <input type="text" name="email" required="required">
                             <span>Email</span>
                         </div>
+                        <?php }?>
                         <div class="inputBox">
-                            <select name="">
+                            <select name="why">
                                 <option value="">-Selectionner un motif-</option>
-                                <option value="">-Avis-</option>
-                                <option value="">-Livraison-</option>
-                                <option value="">-Service-</option>
-                                <option value="">-Qualité-</option>
-                                <option value="">-Satisfaction-</option>
-                                <option value="">-Autre-</option>
+                                <option value="advice">-Avis-</option>
+                                <option value="delivery">-Livraison-</option>
+                                <option value="service">-Service-</option>
+                                <option value="quality">-Qualité-</option>
+                                <option value="satisfaction">-Satisfaction-</option>
+                                <option value="other">-Autre-</option>
                             </select>
                         </div>
                         <div class="inputBox">
-                            <textarea required="required"></textarea>
+                            <textarea required="required" name="text"></textarea>
                             <span>Votre message</span>
                         </div>
                         <div class="inputBox">
-                            <button type="submit" name=""> Envoyer </button>
+                            <button type="submit" name="send"> Envoyer </button>
                         </div>
                     </form>
                 </div>

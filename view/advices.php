@@ -7,16 +7,13 @@ require_once(__DIR__ . '/../controller/Security.php');
 
 session_start();
 
-if(!Security::isConnect()){
+if($_SESSION['user']['rights'] != 1){
     header('Location:../index.php');
 }
 
 $comment = new Comment();
 $advice = $comment->info_advices();
 
-if(isset($_POST["comment"]) && $_POST["comment"] != NULL){
-    Comment_model::write_advice($_POST['comment'], $_SESSION['user']['id']);
-}
 ?>
 <!DOCTYPE html>
 <html>
@@ -32,12 +29,6 @@ if(isset($_POST["comment"]) && $_POST["comment"] != NULL){
             foreach($advice as $com){
                 echo $com['text'];?></br><?php
             }?>
-        <form method="post">
-            <a class="comm" >Votre commentaire :<br/>
-                <textarea class = "send_com" name="comment" rows="10%" cols="90%"></textarea>
-            </a>
-            <button class = 'button' type="submit" name="send"> Envoyer </button>
-        </form>
     </main>
     <?php require("footer.php")?>
 </body>

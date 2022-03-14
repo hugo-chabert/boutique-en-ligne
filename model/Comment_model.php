@@ -36,14 +36,29 @@ class Comment_model{
         exit();
     }
 
-    public static function write_advice($text, $id_user){
-        $req = "INSERT INTO advices (text, id_user) VALUE (:text, :id_user)";
+    public static function write_advice($text, $reason, $id_user){
+        $req = "INSERT INTO advices (text, reason, id_user) VALUE (:text, :reason, :id_user)";
         $stmt = Database::connect_db()->prepare($req);
         $stmt->execute(array(
             ':text' => $text,
+            ':reason' => $reason,
             ':id_user' => $id_user
         ));
-        header("Location: advices.php");
+        header("Location: ../index.php");
+        exit();
+    }
+
+    public static function write_advice_noid($text, $reason, $firstname, $lastname, $email){
+        $req = "INSERT INTO advices (text, reason, firstname, lastname, email) VALUE (:text, :reason, :firstname, :lastname, :email)";
+        $stmt = Database::connect_db()->prepare($req);
+        $stmt->execute(array(
+            ':text' => $text,
+            ':reason' => $reason,
+            ':firstname' => $firstname,
+            ':lastname' => $lastname,
+            ':email' => $email
+        ));
+        header("Location: ../index.php");
         exit();
     }
 
