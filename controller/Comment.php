@@ -25,6 +25,11 @@ class Comment{
         return $results;
     }
 
+    public function info_all_comments_admin(){
+        $results = $this->Comment_model->sql_info_all_comments_admin();
+        return $results;
+    }
+
     public static function delete($id){
         Comment_model::sql_delete($id);
     }

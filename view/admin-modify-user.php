@@ -8,6 +8,15 @@ require_once(__DIR__ . '/../controller/Security.php');
 
 session_start();
 
+if(empty($_GET['id'])){
+    $comment = new Comment();
+    $comment_info = $comment->info_all_comments_admin();
+}
+else{
+    $comment = new Comment();
+    $comment_info = $comment->info_comments_admin($_GET['id']);
+}
+
 if($_SESSION['user']['rights'] != 1){
     header('Location: ../index.php');
     exit();
@@ -16,12 +25,6 @@ if($_SESSION['user']['rights'] != 1){
 if(isset($_POST['del'])){
     Comment::delete($_POST['id']);
 }
-
-$user = new User_model();
-$user_infos = $user->sql_info_user_id($_GET['id']);
-
-$comment = new Comment();
-$comment_info = $comment->info_comments_admin($_GET['id']);
 
 ?>
 <!DOCTYPE html>

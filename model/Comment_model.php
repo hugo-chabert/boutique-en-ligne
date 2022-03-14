@@ -58,6 +58,15 @@ class Comment_model{
         return $results;
     }
 
+    public function sql_info_all_comments_admin(){
+        $req = "SELECT * FROM comments";
+        $stmt = Database::connect_db()->prepare($req);
+        $stmt->execute();
+        $results = $stmt->fetchAll();
+        $stmt->closeCursor();
+        return $results;
+    }
+
     public static function sql_delete($id){
         $req = "DELETE FROM comments WHERE id = :id";
         $stmt = Database::connect_db()->prepare($req);
