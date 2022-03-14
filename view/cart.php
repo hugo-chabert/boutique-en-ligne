@@ -39,6 +39,11 @@ foreach($items AS $i){
     }
 }
 
+if(isset($_POST['payment'])){
+    header('Location: payment.php');
+    exit();
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -71,6 +76,9 @@ foreach($items AS $i){
         }
         echo 'Prix total : '.$totalPrice.' €';
         ?>
+        <form action="" method="post">
+            <button type="submit" name="payment">Payer</button>
+        </form>
     </main>
     <?php require('footer.php');?>
 </body>
