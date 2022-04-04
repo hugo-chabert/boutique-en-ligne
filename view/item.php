@@ -1,6 +1,7 @@
 <?php
 
 require_once(__DIR__ . '/../controller/Item.php');
+require_once(__DIR__ . '/../controller/Cart.php');
 require_once(__DIR__ . '/../controller/Comment.php');
 require_once(__DIR__ . '/../controller/Toolbox.php');
 require_once(__DIR__ . '/../controller/Security.php');
@@ -21,6 +22,11 @@ if(isset($_POST["comment"]) && $_POST["comment"] != NULL){
 if(empty($_GET['id'])){
     header("Location: store.php");
     exit();
+}
+
+if(isset($_POST['cart'])){
+    $cart = new Cart();
+    $add_to_cart = $cart->add_to_cart($_SESSION['user']['id'] ,$item_info['id']);
 }
 
 ?>
@@ -45,19 +51,10 @@ if(empty($_GET['id'])){
                         <h2> <?php echo $item_info['name'];?> </h2>
                         <h3> <?php echo $item_info['price'];?> €</h3>
                         <p> <?php echo $item_info['description'];?> </p>
-                        <p>
-                            <?php
-                                if ($item_info['quantity'] == 0){echo 'Article indisponible'; }
-                                elseif($item_info['quantity'] < 5) { echo $item_info['quantity'].' restant'; }
-                                else {echo '';}
-                            ?>
-                        </p>
-                        <div class='rating-box'><h1>Rating box test</h1></div>
+                        <form method="post">
+                            <button class = 'button' type="submit" name="cart">Ajouter au panier</button>
+                        </form>
                     </div>
-                </article>
-                <article>
-                    <a href=""><button>Acheter l'article</button></a>
-                    <a href=""><button>Ajouter au panier </button></a>
                 </article>
             </section>
             <hr>

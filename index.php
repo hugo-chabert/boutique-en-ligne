@@ -26,6 +26,7 @@ if (isset($_SESSION['user'])) {
     </head>
     <body>
         <?php require("view/header_index.php");?>
+        <?php require('view/errors.php');?>
         <main>
 
             <section class="pres-site">
