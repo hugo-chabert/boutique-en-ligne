@@ -21,7 +21,7 @@ if(isset($_POST["submit"]) && !empty($_FILES["my_image"]["name"]) && !empty($_PO
 	$tmp_name = $_FILES['my_image']['tmp_name'];
 	$error = $_FILES['my_image']['error'];
     if($error === 0){
-		if($img_size > 1000000){
+		if($img_size > 100000000){
             Toolbox::addMessageAlert("Désolé votre fichier est trop gros.", Toolbox::RED_COLOR);
 		}
         else{
