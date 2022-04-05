@@ -66,6 +66,18 @@ class Item_model{
         $stmt->closeCursor();
         return $results;
     }
+
+    public function sql_searchBar($name){
+        $req = "SELECT * FROM items WHERE name LIKE :name";
+        $stmt = Database::connect_db()->prepare($req);
+        $stmt->execute(array(
+            ":name" => $name
+        ));
+        $results = $stmt->fetchAll();
+        $stmt->closeCursor();
+        $show = 'oui';
+        return $results;
+    }
 }
 
 ?>

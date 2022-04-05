@@ -6,8 +6,15 @@ require_once(__DIR__ . '/../controller/Security.php');
 
 session_start();
 
-$item = new Item();
-$items_info = $item->info_items();
+if(isset($_GET['search']) && !empty(trim($_GET['search-bar']))){
+    $name = $_GET['search-bar'];
+    $item = new Item();
+    $items_info = $item->searchBar($name);
+}
+else{
+    $item = new Item();
+    $items_info = $item->info_items();
+}
 
 ?>
 
@@ -22,27 +29,28 @@ $items_info = $item->info_items();
     <?php require("header.php");?>
     <main>
         <section class="filter">
-            <form action="" method="Post">
+            <form action="" method="GET">
                 <label for="search-bar">Rechercher</label>
                 <article>
                     <input id="search-bar" type="text" name="search-bar" placeholder="Search ..."/>
-                    <button> <img src="https://img.icons8.com/ios-filled/50/000000/search--v1.png"/> </button>
+                    <button name="search"> <img src="https://img.icons8.com/ios-filled/50/000000/search--v1.png"/> </button>
                 </article>
 
                 <select>
-                    <option value="dessin">--Selectionner une catégorie--</option>
+                    <option>--Selectionner une catégorie--</option>
                     <option value="dessin">Dessin</option>
                     <option value="logo">Logo</option>
                     <option value="portrait">Portrait</option>
                     <option value="custom">Custom</option>
                 </select>
-                
+
                 <select>
-                    <option value="dessin">--Selectionner un prix--</option>
-                    <option value="dessin"> < 20€ </option>
-                    <option value="poster">20 - 40 €</option>
-                    <option value="portrait">40 - 60€</option>
-                    <option value="custom"> > 80€</option>
+                    <option>--Selectionner un prix--</option>
+                    <option value="20"> < 20€ </option>
+                    <option value="40">20 - 40 €</option>
+                    <option value="60">40 - 60€</option>
+                    <option value="80">60 - 80€</option>
+                    <option value="80+"> > 80€</option>
                 </select>
 
                 <button id='filter-button' type="submit" name="filter"> Filtrer </button>

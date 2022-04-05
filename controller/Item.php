@@ -36,6 +36,11 @@ class Item{
         $results = $this->Item_model->sql_display_category($id_category);
         return $results;
     }
+
+    public function searchBar($name){
+        $results = $this->Item_model->sql_searchBar($name);
+        return $results;
+    }
 }
 
 ?>
