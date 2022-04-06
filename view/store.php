@@ -42,6 +42,7 @@ $items_info = $item->info_items();
                     <option value="dessin"> < 20€ </option>
                     <option value="poster">20 - 40 €</option>
                     <option value="portrait">40 - 60€</option>
+                    <option value="portrait">60 - 80€</option>
                     <option value="custom"> > 80€</option>
                 </select>
 
