@@ -64,7 +64,7 @@ $items_info = $item->info_items();
                         <a href="item.php?id= <?php echo $item['id'] ?>">Voir Plus</a>
                     </button>
                 </article>
-                <hr>
+                <!-- <hr> -->
             <?php } ?>
         </section>
 

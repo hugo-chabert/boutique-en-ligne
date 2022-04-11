@@ -1,13 +1,18 @@
 main{
+
+    flex-grow: 1;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    
 }
+
 a{
     text-decoration: none;
     color: var(--Black-);
 }
 .filter{
+    padding: 0.9375rem;
     width: 20%;
 }
 
@@ -106,31 +111,34 @@ main hr{
     height: auto;
     margin-top: 6.25rem ;
     margin-bottom: 6.25rem ;
+    margin-right: 1px;
 }
-
-.store{
-    margin-top: 100px;
+.store {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-items: baseline;
     width: 75%;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
+    padding-top: 5.3125rem;
 }
-.store article{
+.store article {
     display: flex;
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.store article div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 0.9375rem;
     flex-direction: column;
-    margin-bottom: 15px ;
-    width: 23%;
 }
 .store article img{
     width:300px;
     align-self: center;
-}
-.store article div{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 100%;
-    margin-top: 0.9375rem;
 }
 .store article h2,
 .store article h3{
@@ -167,4 +175,79 @@ main hr{
 .store article button:hover::after {
     top: 0rem;
     left: 0rem;
+}
+
+@media all and (min-width: 600px) and (max-width: 992px){
+	body {
+        background-color:blue;
+      }
+      main{
+        flex-grow: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    main hr{
+        height: auto;
+        margin-top: 6.25rem ;
+        margin-bottom: 6.25rem ;
+        margin-right: 1px;
+    }
+      .store {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-items: baseline;
+        width: 75%;
+    }
+    .store article {
+        display: flex;
+        margin-bottom: 15px;
+        width: 100%;
+        padding: 10px;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .store article div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-top: 0.9375rem;
+        flex-direction: column;
+    }
+}
+
+@media all and (max-device-width: 599px) {
+	body {
+        background-color:green;
+      }
+      main{
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+      .store {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-items: baseline;
+        width: 75%;
+    }
+    .store article {
+        display: flex;
+        margin-bottom: 15px;
+        width: 100%;
+        padding: 10px;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .store article div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-top: 0.9375rem;
+        flex-direction: column;
+    }
 }
