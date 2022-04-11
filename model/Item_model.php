@@ -75,7 +75,17 @@ class Item_model{
         ));
         $results = $stmt->fetchAll();
         $stmt->closeCursor();
-        $show = 'oui';
+        return $results;
+    }
+
+    public function sql_searchCategory($category){
+        $req = "SELECT * FROM items WHERE id_category = :category";
+        $stmt = Database::connect_db()->prepare($req);
+        $stmt->execute(array(
+            ":category" => $category
+        ));
+        $results = $stmt->fetchAll();
+        $stmt->closeCursor();
         return $results;
     }
 }

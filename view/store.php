@@ -6,15 +6,21 @@ require_once(__DIR__ . '/../controller/Security.php');
 
 session_start();
 
-if(isset($_GET['search']) && !empty(trim($_GET['search-bar']))){
-    $name = $_GET['search-bar'];
+if(isset($_POST['search']) && !empty(trim($_POST['search-bar']))){
+    $name = $_POST['search-bar'];
     $item = new Item();
     $items_info = $item->searchBar($name);
+}
+else if(isset($_POST['filter']) && !empty(trim($_POST['category']))){
+    $category = $_POST['category'];
+    $item = new Item();
+    $items_info = $item->searchCategory($category);
 }
 else{
     $item = new Item();
     $items_info = $item->info_items();
 }
+
 
 ?>
 
@@ -28,34 +34,25 @@ else{
 <body>
     <?php require("header.php");?>
     <main>
-        <section class="filter">
-            <form action="" method="GET">
+        <section class="filters">
+            <form action="" method="POST">
                 <label for="search-bar">Rechercher</label>
                 <article>
                     <input id="search-bar" type="text" name="search-bar" placeholder="Search ..."/>
                     <button name="search"> <img src="https://img.icons8.com/ios-filled/50/000000/search--v1.png"/> </button>
                 </article>
 
-                <select>
-                    <option>--Selectionner une catégorie--</option>
-                    <option value="dessin">Dessin</option>
-                    <option value="logo">Logo</option>
-                    <option value="portrait">Portrait</option>
-                    <option value="custom">Custom</option>
-                </select>
-
-                <select>
-                    <option>--Selectionner un prix--</option>
-                    <option value="20"> < 20€ </option>
-                    <option value="40">20 - 40 €</option>
-                    <option value="60">40 - 60€</option>
-                    <option value="80">60 - 80€</option>
-                    <option value="80+"> > 80€</option>
+                <select name="category">
+                    <option value="" >--Selectionner une catégorie--</option>
+                    <option value="1">Dessin</option>
+                    <option value="2">Logo</option>
+                    <option value="3">Portrait</option>
+                    <option value="4">Custom</option>
                 </select>
 
                 <button id='filter-button' type="submit" name="filter"> Filtrer </button>
-
             </form>
+
         </section>
 
         <hr>
