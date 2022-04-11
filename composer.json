@@ -1,0 +1,17 @@
+{
+    "name": "stephane/ok",
+    "autoload": {
+        "psr-4": {
+            "Stephane\\Ok\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "hugo-chabert",
+            "email": "hugo.chabert@laplateforme.io"
+        }
+    ],
+    "require": {
+        "stripe/stripe-php": "^7.122"
+    }
+}
