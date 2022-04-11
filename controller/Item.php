@@ -46,6 +46,11 @@ class Item{
         $results = $this->Item_model->sql_searchCategory($category);
         return $results;
     }
+
+    public function lastItem(){
+        $results = $this->Item_model->sql_lastItem();
+        return $results;
+    }
 }
 
 ?>

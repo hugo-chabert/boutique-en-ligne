@@ -6,8 +6,9 @@ require_once(__DIR__ . '/controller/Item.php');
 session_start();
 $item = new Item();
 $items_info = $item->info_items();
+$last_item = $item->lastItem();
 
-if (isset($_SESSION['user'])) {
+if(isset($_SESSION['user'])) {
     $id_session = $_SESSION['user']['id'];
     $_SESSION['user_item'] = new User($id_session);
 }
@@ -44,17 +45,12 @@ if (isset($_SESSION['user'])) {
                     <h1>Les nouveautés du mois !!!</h1>
 
                     <section class="month-item">
-                        <img src="public/img/blacky.PNG" alt="test">
+                        <img src="public/img/<?php echo $last_item['image']?>" alt="test">
                         <div class="info-item">
-                            <h2>Nom Produit</h2>
-                            <h3>99999.99 $</h3>
+                            <h2><?php echo $last_item['name']?></h2>
+                            <h3><?php echo $last_item['price']?> $</h3>
                             <p>
-                                Lorem ipsum dolor, sit amet consectetur
-                                adipisicing elit. Error laboriosam minus
-                                ipsa sapiente eaque aut at molestiae magnam?
-                                Est velit, temporibus veritatis maiores
-                                ratione molestias itaque eveniet! Laboriosam,
-                                nostrum ullam!
+                                <?php echo $last_item['description']?>
                             </p>
                             <a href=""><button>Voir Plus</button></a>
                         </div>
