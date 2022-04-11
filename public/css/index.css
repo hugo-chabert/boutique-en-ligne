@@ -131,6 +131,57 @@ article .info-item button:hover {
     height: 90vh;
     background-color:yellowgreen;
 }
+.best-seller h1{
+    font-size: clamp(1rem, 2vw, 2rem);
+    text-align: center;
+}
+#myCarousel {
+    width: 90%;
+    height: 85%;
+    position: relative;
+    margin: 1% auto 1% auto;
+    background-color: aqua;
+    position: relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Card-box{
+    width: 90%;
+    height: 90%;
+    /* display: flex;
+    flex-direction: row; */
+    align-items: center;
+    background-color: blue;
+}
+
+.carousel-button{
+    cursor: pointer;
+}
+
+#prev,
+#next{
+    left: 0;
+    opacity: 0.4;
+    transition: all 0.5s ease;
+}
+#prev:hover,
+#next:hover{
+    transform:  scale(1.1);
+    opacity: 1;
+}
+
+.Card-box article{
+    width: 300px;
+    background-color: beige;
+    display: inline-block;
+}
+
+/* .Card-box img{
+    width: px;
+} */
+
 
 /*Partie Message client*/
 .satisfaction{

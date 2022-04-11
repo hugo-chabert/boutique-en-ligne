@@ -36,6 +36,10 @@ class Item{
         $results = $this->Item_model->sql_display_category($id_category);
         return $results;
     }
+    public function display_Item_Carousel(){
+        $results = $this->Item_model->sql_display_Item_Carousel();
+        return $results;
+    }
 }
 
 ?>
