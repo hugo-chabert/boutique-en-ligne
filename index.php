@@ -52,7 +52,7 @@ if(isset($_SESSION['user'])) {
                             <p>
                                 <?php echo $last_item['description']?>
                             </p>
-                            <a href=""><button>Voir Plus</button></a>
+                            <a href="view/item.php?id=<?php echo $last_item['id'] ?>"><button>Voir Plus</button></a>
                         </div>
                     </section>
                 </article>

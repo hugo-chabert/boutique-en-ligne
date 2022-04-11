@@ -66,7 +66,7 @@ else{
                             <h3><?php echo $item['price'].' €';?></h3>
                         </div>
                     <button>
-                        <a href="item.php?id= <?php echo $item['id'] ?>">Voir Plus</a>
+                        <a href="item.php?id=<?php echo $item['id'] ?>">Voir Plus</a>
                     </button>
                 </article>
                 <hr>
