@@ -20,7 +20,7 @@ $finalPrice = (float)$totalPrice;
 
 // Nous créons l'intention de paiement et stockons la réponse dans la variable $intent
 $intent = \Stripe\PaymentIntent::create([
-    'amount' => $price*100, // Le prix doit être transmis en centimes
+    'amount' => $finalPrice*100, // Le prix doit être transmis en centimes
     'currency' => 'eur',
 ]);
 
