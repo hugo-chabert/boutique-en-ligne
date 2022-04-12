@@ -30,6 +30,10 @@ class Cart{
         return $results;
     }
 
+    public function removeBuyItem($id_user){
+        $results = $this->Cart_model->sql_removeBuyItem($id_user);
+        return $results;
+    }
 }
 
 ?>

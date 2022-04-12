@@ -97,7 +97,6 @@ class Item_model{
         $stmt->closeCursor();
         return $results;
     }
-
 }
 
 ?>

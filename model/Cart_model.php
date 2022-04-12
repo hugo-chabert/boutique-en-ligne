@@ -71,5 +71,13 @@ class Cart_model{
             exit();
     }
 
+    public function sql_removeBuyItem($id_user){
+        $req = "DELETE FROM carts WHERE id_user = :id_user";
+        $stmt = Database::connect_db()->prepare($req);
+            $stmt->execute(array(
+                ":id_user" => $id_user
+            ));
+            exit();
+    }
 }
 ?>
