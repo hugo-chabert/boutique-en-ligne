@@ -89,6 +89,15 @@ class Item_model{
         return $results;
     }
 
+    public function sql_display_Item_Carousel(){
+        $req = "SELECT * FROM items ORDER BY id DESC LIMIT 6";
+        $stmt = Database::connect_db()->prepare($req);
+        $stmt->execute();
+        $results = $stmt->fetchAll();
+        $stmt->closeCursor();
+        return $results;
+    }
+
     public function sql_lastItem(){
         $req = "SELECT * FROM items ORDER BY id DESC LIMIT 1";
         $stmt = Database::connect_db()->prepare($req);

@@ -29,6 +29,11 @@ if(isset($_POST['cart'])){
     $add_to_cart = $cart->add_to_cart($_SESSION['user']['id'] ,$item_info['id']);
 }
 
+function quantity_list(){
+    for ($i = 1; $i < 31; $i++){
+        echo '<option value="'.$i.'">'.$i.'</option>';
+    }
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -52,19 +57,28 @@ if(isset($_POST['cart'])){
                         <h3> <?php echo $item_info['price'];?> €</h3>
                         <p> <?php echo $item_info['description'];?> </p>
                         <form method="post">
-                            <button class = 'button' type="submit" name="cart">Ajouter au panier</button>
+                            <label for="quantity_for_cart">Saisir la quantité voulu</label>
+                            <select name="quantity_for_cart" id="quantity_for_cart">
+                                <?php quantity_list() ?>
+                            </select>
+                            <article>
+                                <button class = 'button' type="submit" name="cart">Ajouter au panier</button>
+                                <a href="store.php"><button class = 'button' type="submit" name="buy">Acheter cet article</button></a>
+                                <div class='rating-box'>
+                                    <h1>Rating box</h1> 
+                                </div>
+                            </article>
                         </form>
                     </div>
                 </article>
             </section>
             <hr>
             <section>
-
+            
                 <article>
-
+                    <!--Note Article-->
                 </article>
-
-                <article>
+                <article class="box_comm">
                     <?php
                         foreach($comment_info as $com){?>
                         <p> <?php echo $com['text'];?></p>
@@ -76,7 +90,7 @@ if(isset($_POST['cart'])){
                         <form method="post">
                             <label for='comment'>Ecrivez votre meilleur commentaire pour cette article: </label>
                             <textarea class = "send_com" name="comment" rows="10%" cols="90%"></textarea>
-                            <button class = 'button' type="submit" name="send"> Envoyer </button>
+                            <button class = 'send_comm' type="submit" name="send"> Envoyer </button>
                         </form>
 
                     <?php }

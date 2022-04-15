@@ -7,13 +7,12 @@ session_start();
 $item = new Item();
 $items_info = $item->info_items();
 $last_item = $item->lastItem();
+$caroussel = $item->display_Item_Carousel();
 
 if(isset($_SESSION['user'])) {
     $id_session = $_SESSION['user']['id'];
     $_SESSION['user_item'] = new User($id_session);
 }
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,7 +41,7 @@ if(isset($_SESSION['user'])) {
                 </article>
 
                 <article>
-                    <h1>Les nouveautés du mois !!!</h1>
+                    <h1>L'exclusivité du mois !!!</h1>
 
                     <section class="month-item">
                         <img src="public/img/<?php echo $last_item['image']?>" alt="test">
@@ -64,12 +63,24 @@ if(isset($_SESSION['user'])) {
             </section>
 
             <section class="best-seller">
-                <?php 
-                // foreach($items_info as $item){
-                //     echo '<div>'.$item['name'].$item['price'].'<img class= image src="public/img/'.$item['image'].'" width="100px">';
-                //     echo '<button><a href="item.php?id='.$item['id'].'">Aller à l'article</a></button></div>';
-                // }
-                ?>
+                <h1>Les dernières nouveautés !!</h1>
+                <div class="container">
+                    <?php foreach($caroussel as $item){?>
+                        <div class="card">
+                            <h2 class='title'><?php echo $item['name'];?></h2>
+                            <div class="bar">
+                                <div class="emptybar"></div>
+                                <div class="filledbar"></div>
+                            </div>
+                            <div class="circle">
+                                <img class= 'image-article' src="public/img/<?php echo $item['image'];?>" >
+                                <a href="view/item.php?id= <?php echo $item['id'] ?>">
+                                    <button class="button-card">Voir Plus</button>
+                                </a>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
             </section>
 
             <section class="parallax-2">
