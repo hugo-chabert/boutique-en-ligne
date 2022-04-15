@@ -82,6 +82,14 @@ class User_model{
             ':id_user' => $id
         ));
     }
+
+    public function sql_order($id){
+        $req = "UPDATE users set orders ";
+        $stmt = Database::connect_db()->prepare($req);
+        $stmt->execute(array(
+            ':id_user' => $id
+        ));
+    }
 }
 
 ?>

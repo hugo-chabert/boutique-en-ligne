@@ -269,5 +269,10 @@ class User{
         Toolbox::addMessageAlert("Utilisateur débanni !", Toolbox::GREEN_COLOR);
     }
 
+    public function order($id_user){
+        $results = $this->User_model->sql_order($id_user);
+        return $results;
+    }
+
 }
 ?>

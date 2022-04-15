@@ -54,7 +54,7 @@ window.onload = () => {
                 document.getElementById("errors").innerText = result.error.message
             } else {
                 // Sinon on redirige l'utilisateur
-                document.location.href = "orderdetails";
+                document.location.href = "orderdetails.php";
             }
         })
     })

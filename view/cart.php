@@ -39,12 +39,9 @@ foreach($items AS $i){
     }
 }
 
-if(isset($_POST['payment']) && $totalPrice > 0){
+if(isset($_POST['payment'])){
     header('Location: payment.php');
     exit();
-}
-elseif(isset($_POST['payment']) && $totalPrice == 0){
-    Toolbox::addMessageAlert("Votre panier est vide !", Toolbox::RED_COLOR);
 }
 
 ?>

@@ -59,6 +59,7 @@ class Register{
                     $_SESSION["user"]["id"] = $results["id"];
                     $_SESSION["user"]["login"] = $results["login"];
                     $_SESSION["user"]["rights"] = $results["rights"];
+                    $_SESSION["user"]["orders"] = $results["orders"];
                     Toolbox::addMessageAlert("Connexion faite.", Toolbox::GREEN_COLOR);
                     header("Location: ../index.php");
                     exit();
@@ -71,7 +72,7 @@ class Register{
             }
             else{
                 $ban = Register::check_ban($results['id']);
-                echo "T'es ban LOL, raison : ".$ban['reason'];
+                echo "Tu es banni, raison : ".$ban['reason'];
             }
         }
         elseif(Register::info_user_login($login) == false){
