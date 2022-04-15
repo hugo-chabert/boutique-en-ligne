@@ -129,59 +129,126 @@ article .info-item button:hover {
 /*Partie Meilleures ventes*/
 .best-seller{
     height: 90vh;
-    background-color:yellowgreen;
+    display: flex;
+    flex-direction: column;
 }
 .best-seller h1{
     font-size: clamp(1rem, 2vw, 2rem);
     text-align: center;
 }
-#myCarousel {
-    width: 90%;
-    height: 85%;
-    position: relative;
-    margin: 1% auto 1% auto;
-    background-color: aqua;
-    position: relative;
-    display:flex;
+
+
+/*! test */
+
+.container {
+    height: 80%;
+    width: 95%;
+    top: 60px;
+    left: calc(50% - 300px);
+    align-self: center;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.Card-box{
-    width: 90%;
-    height: 90%;
-    /* display: flex;
-    flex-direction: row; */
+.card {
+    display: flex;
+    height: 75%;
+    width: 18%;
+    background-color: var(--Background2-);
+    border-radius: 10px;
+    box-shadow: -1rem 0 3rem #000;
+    transition: 0.4s ease-out;
+    position: relative;
+    left: 0px;
+}
+
+.card:not(:first-child) {
+    margin-left: -50px;
+}
+
+.card:hover {
+    transform: translateY(-20px);
+    transition: 0.4s ease-out;
+}
+
+.card:hover ~ .card {
+    position: relative;
+    left: 50px;
+    transition: 0.4s ease-out;
+}
+
+.title {
+    color: black;
+    font-weight: 300;
+    position: absolute;
+    left: 20px;
+    top: 15px;
+}
+
+.bar {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    height: 5px;
+    width: 150px;
+}
+
+.emptybar {
+    background-color: #2e3033;
+    width: 100%;
+    height: 100%;
+}
+
+.filledbar {
+    position: absolute;
+    top: 0px;
+    z-index: 3;
+    width: 0px;
+    height: 100%;
+    background: rgb(0,154,217);
+    background: linear-gradient(90deg, #BF9B9B 0%, #C7A8A8 65%, #D7C1C1 100%);
+    transition: 0.6s ease-out;
+}
+
+.card:hover .filledbar {
+    width: 100%;
+    transition: 0.4s ease-out;
+}
+
+.circle {
+    position: absolute;
+    top: 30%;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
     align-items: center;
-    background-color: blue;
 }
 
-.carousel-button{
+.image-article{
+    width: 70%;
+}
+
+.button-card {
+    align-self: center;
+    font-size: clamp(1rem, 2vw, 1.20rem);
+    width: fit-content;
+    margin-top: 1.25rem;
+    padding: 13px 20px 13px;
+    letter-spacing: 0.0625rem;
+    outline: 0;
+    border: 1px solid black;
     cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    transition: ease-in-out 0.4s;
 }
 
-#prev,
-#next{
-    left: 0;
-    opacity: 0.4;
-    transition: all 0.5s ease;
+.button-card:hover {
+    background-color: var(--Background5-);
+    box-shadow: 5px 5px 3px var(--Shadow-);
 }
-#prev:hover,
-#next:hover{
-    transform:  scale(1.1);
-    opacity: 1;
-}
-
-.Card-box article{
-    width: 300px;
-    background-color: beige;
-    display: inline-block;
-}
-
-/* .Card-box img{
-    width: px;
-} */
-
+/*! test */
 
 /*Partie Message client*/
 .satisfaction{

@@ -68,23 +68,22 @@ if (isset($_SESSION['user'])) {
 
             <section class="best-seller">
                 <h1>Les dernières nouveautés !!</h1>
-                <div class="carousel" id="myCarousel">
-                    <img id='prev' class='carousel-button' src="public/img/arrow2.png" alt="precednet">
-                    <div class="Card-box" id="carrou">
-                        <?php foreach($caroussel as $item){?>
-                        <article>
-                            <img class= 'image-article' src="public/img/<?php echo $item['image'];?>">
-                                <div>
-                                    <h2><?php echo $item['name'];?></h2>
-                                    <h3><?php echo $item['price'].' €';?></h3>
-                                </div>
-                            <button>
-                                <a href="view/item.php?id= <?php echo $item['id'] ?>">Voir Plus</a>
-                            </button>
-                        </article>
-                        <?php } ?>
-                    </div>
-                    <img id='next' class='carousel-button' src="public/img/arrow.png" alt="suivant">
+                <div class="container">
+                    <?php foreach($caroussel as $item){?>
+                        <div class="card">
+                            <h2 class='title'><?php echo $item['name'];?></h2>
+                            <div class="bar">
+                                <div class="emptybar"></div>
+                                <div class="filledbar"></div>
+                            </div>
+                            <div class="circle">
+                                <img class= 'image-article' src="public/img/<?php echo $item['image'];?>" >
+                                <a href="view/item.php?id= <?php echo $item['id'] ?>">
+                                    <button class="button-card">Voir Plus</button>
+                                </a>
+                            </div>
+                        </div>
+                    <?php } ?>
                 </div>
             </section>
 
