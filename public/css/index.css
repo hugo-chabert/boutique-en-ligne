@@ -20,8 +20,12 @@ main{
 }
 article h1{
     text-align: center;
-    font-size: clamp(1rem, 2vw, 2rem);
     text-shadow: 2px 2px 3px var(--White-);
+    font-family: Title;
+    letter-spacing: 4px;
+    font-size: clamp(1rem, 3vw, 4rem);
+    margin-top: 25px;
+    margin-bottom: 0;
 }
 .shadow{
     width: 100%;
@@ -45,7 +49,8 @@ article h1{
 }
 article .shadow button {
     font-size: clamp(0.5rem, 2vw, 1.3rem);
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    font-family: Texte;
     padding: 0.625rem 1.5625rem 0.625rem;
     border: 1px solid black;
     cursor: pointer;
@@ -82,19 +87,26 @@ article img {
 .info-item h2{
     font-size: clamp(1rem, 2vw, 1.85rem);
     margin: 0 1.25rem 0.625rem;
+    font-family: Texte;
+    letter-spacing: 2px;
 }
 .info-item h3{
     font-size: clamp(0.75rem, 2vw, 1.5rem);
     margin: 0 1.25rem 1.25rem;
+    font-family: Texte;
+    letter-spacing: 1px;
 }
 .info-item p{
     font-size: clamp(0.5rem, 2vw, 1.25rem);
     margin: 0 1.25rem 1.25rem;
     text-align: justify;
+    font-family: Texte;
+    letter-spacing: 1px;
 }
 article .info-item button {
     font-size: clamp(0.5rem, 2vw, 1.3rem);
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    font-family: Texte;
     padding: 0.625rem 1.5625rem 0.625rem;
     margin: 0 1.25rem;
     border: 1px solid black;
@@ -133,8 +145,11 @@ article .info-item button:hover {
     flex-direction: column;
 }
 .best-seller h1{
-    font-size: clamp(1rem, 2vw, 2rem);
+    font-size: clamp(1rem, 3vw, 3.5rem);
     text-align: center;
+    font-family: Title;
+    letter-spacing: 4px;
+    margin-top: 0;
 }
 
 
@@ -184,6 +199,9 @@ article .info-item button:hover {
     position: absolute;
     left: 20px;
     top: 15px;
+    font-family: Title;
+    letter-spacing: 2px;
+    font-size: clamp(1rem, 2vw, 2rem);
 }
 
 .bar {
@@ -231,11 +249,12 @@ article .info-item button:hover {
 
 .button-card {
     align-self: center;
-    font-size: clamp(1rem, 2vw, 1.20rem);
     width: fit-content;
     margin-top: 1.25rem;
     padding: 13px 20px 13px;
-    letter-spacing: 0.0625rem;
+    font-size: clamp(0.5rem, 2vw, 1.3rem);
+    letter-spacing: 2px;
+    font-family: Texte;
     outline: 0;
     border: 1px solid black;
     cursor: pointer;
@@ -268,6 +287,8 @@ article .info-item button:hover {
 
 .promess h3 {
     font-size: clamp(0.75rem, 2vw, 1.5rem);
+    font-family: Texte;
+    letter-spacing: 2px;
 }
 
 .promess article {

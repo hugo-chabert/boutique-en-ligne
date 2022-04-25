@@ -33,3 +33,12 @@
     --Error-: rgb(187, 8, 8);
     --Success-: #65F695;
 }
+
+@font-face {
+    font-family: Title;
+    src: url(../font/HellostyBlast-1G8Y2.ttf);
+}
+@font-face {
+    font-family: Texte;
+    src: url(../font/NugoSansLight-9YzoK.ttf);
+}

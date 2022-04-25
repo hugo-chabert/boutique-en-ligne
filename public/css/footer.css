@@ -7,6 +7,8 @@ html, body {
 footer ul{
     list-style-type : none;
     padding: 0;
+    font-family: Texte;
+    letter-spacing: 2px;
 }
 footer li a{
     text-decoration: none ;
@@ -17,11 +19,13 @@ footer li a{
 }
 .part-up section p{
     font-size: clamp(0.5rem, 2vw, 1rem);
-    letter-spacing: 1px;
+    font-family: Texte;
+    letter-spacing: 2px;
 }
 footer div div section h2{
     color: var(--Black-);
-    letter-spacing: 1px;
+    letter-spacing: 4px;
+    font-family: Title;
     font-size: clamp(1rem, 2vw, 1.5rem);
 }
 .container-footer{
@@ -58,6 +62,11 @@ footer hr{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+.part-down section p{
+    font-size: clamp(0.5rem, 2vw, 1rem);
+    font-family: Texte;
+    letter-spacing: 2px;
 }
 
 

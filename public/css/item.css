@@ -21,25 +21,34 @@ section article:nth-child(2){
 }
 section article img{
     width: 25rem;
+    border: inset var(--Grey-) 5px;
 }
 section article h2{
-    font-size: clamp(1rem, 2vw, 1.85rem);
+    font-family: Title;
+    letter-spacing: 4px;
+    font-size: clamp(1rem, 2.5vw, 2.8rem);
     margin: 0 1.25rem 0.625rem;
 }
 
 section article h3{
-    font-size: clamp(0.75rem, 2vw, 1.5rem);
+    font-family: Texte;
+    letter-spacing: 2px;
+    font-size: clamp(1rem, 2vw, 1.20rem);
     margin: 0 1.25rem 1.25rem;
 }
 
 section article div p{
-    font-size: clamp(0.5rem, 2vw, 1.35rem);
+    font-size: clamp(0.5rem, 2vw, 1.15rem);
+    font-family: Texte;
+    letter-spacing: 2px;
     margin: 0 1.25rem 1.25rem;
     text-align: justify;
     width: 700px;
 }
 .box_comm p{
-    font-size: clamp(0.5rem, 2vw, 1.35rem);
+    font-family: Texte;
+    letter-spacing: 2px;
+    font-size: clamp(1rem, 2vw, 1.25rem);
     margin:5px 0 ;
     text-align: justify;
     width: 700px;
@@ -48,10 +57,10 @@ section article div p{
 form article button{
     align-self: start;
     margin: 0 20px  ;
-    font-family: inherit;
+    font-family: Texte;
     font-size: clamp(0.5rem, 2vw, 1rem);
     font-weight: 200;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     padding: 0.625rem 1.5625rem 0.625rem;
     outline: 0;
     border: 1px solid black;
@@ -101,6 +110,9 @@ main section:nth-child(2){
 main section form{
     display: flex;
     flex-direction: column;
+    font-family: Texte;
+    letter-spacing: 2px;
+    font-size: clamp(1rem, 2vw, 1.25rem);
 }
 
 hr{

@@ -24,6 +24,8 @@ main{
     margin-top: 0.9375rem;
     margin-bottom: 0.3125rem;
     font-size: clamp(1rem, 2vw, 1.25rem);
+    letter-spacing: 2px;
+    font-family: Texte;
 }
 
 .profile-content input{
@@ -33,17 +35,19 @@ main{
     margin-bottom: 0.3125rem;
     color: var(--Black-);
     font-family: Texte;
+    letter-spacing: 2px;
     background-color: var(--Background3-);
     border: none;
 }
 .profile-content textarea{
     font-size: clamp(0.5rem, 2vw, 1.25rem);
+    font-family: Texte;
+    letter-spacing: 2px;
     height: 12.5rem;
     min-width: 18.75rem;
     max-width: 28.125rem;
     margin-bottom: 0.3125rem;
     color: var(--Black-);
-    font-family: Texte;
     background-color: var(--Background3-);
     border: none;
 }
@@ -51,10 +55,10 @@ main{
 .profile-content button {
     align-self: center;
     margin: 1.25rem 0.3125rem 1.25rem ;
-    font-family: inherit;
+    font-family: Texte;
     font-size: clamp(0.5rem, 2vw, 1rem);
     font-weight: 200;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     padding: 10px 25px 10px;
     outline: 0;
     border: 1px solid black;

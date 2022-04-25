@@ -23,11 +23,15 @@ main{
 .profile-content label{
     margin-top: 0.9375rem;
     margin-bottom: 0.3125rem;
+    font-family: Texte;
+    letter-spacing: 2px;
     font-size: clamp(1rem, 2vw, 1.25rem);
 }
 
 .profile-content input{
     font-size: clamp(0.5rem, 2vw, 1.25rem);
+    font-family: Texte;
+    letter-spacing: 2px;
     height: 1.875rem;
     max-width: 18.75rem;
     margin-bottom: 0.3125rem;
@@ -40,10 +44,10 @@ main{
 .profile-content button {
     align-self: start;
     margin: 20px 5px 20px ;
-    font-family: inherit;
+    font-family: Texte;
     font-size: clamp(0.5rem, 2vw, 1rem);
     font-weight: 200;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     padding: 10px 25px 10px;
     outline: 0;
     border: 1px solid black;
@@ -82,6 +86,7 @@ td {
     border-bottom: solid;
     border-bottom-width: 0.025rem;
     font-family: Texte;
+    letter-spacing: 2px;
     font-size: clamp(0.5rem, 2vw, 1.25rem)
 }
 table a{

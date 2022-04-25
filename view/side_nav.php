@@ -6,7 +6,7 @@
         <ul>
             <li> <a href="profile_info.php">Informations Personnelles</a></li>
             <li> <a href="my_orders.php">Mes Commandes</a></li>
-            <li> <a href="">Mon Panier</a></li>
+            <li> <a href="cart.php">Mon Panier</a></li>
             <li> <a href="my_opinions.php">Mes Avis</a></li>
             <?php
             if ($_SESSION['user']['rights']==1){?>
