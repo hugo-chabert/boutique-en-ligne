@@ -89,5 +89,14 @@ class Comment_model{
             ':id' => $id
         ));
     }
+
+    public function sql_display_Com_Carousel(){
+        $req = "SELECT * FROM advices ORDER BY id DESC LIMIT 3";
+        $stmt = Database::connect_db()->prepare($req);
+        $stmt->execute();
+        $results = $stmt->fetchAll();
+        $stmt->closeCursor();
+        return $results;
+    }
 }
 ?>

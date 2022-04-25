@@ -34,6 +34,11 @@ class Comment{
         Comment_model::sql_delete($id);
     }
 
+    public function display_Com_Carousel(){
+        $results = $this->Comment_model->sql_display_Com_Carousel();
+        return $results;
+    }
+
 }
 
 ?>

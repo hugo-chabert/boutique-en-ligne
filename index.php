@@ -2,12 +2,15 @@
 
 require_once(__DIR__ . '/controller/User.php');
 require_once(__DIR__ . '/controller/Item.php');
+require_once(__DIR__ . '/controller/Comment.php');
 
 session_start();
 $item = new Item();
 $items_info = $item->info_items();
 $last_item = $item->lastItem();
 $caroussel = $item->display_Item_Carousel();
+$com = new Comment();
+$caroussel2 = $com->display_Com_Carousel();
 
 if(isset($_SESSION['user'])) {
     $id_session = $_SESSION['user']['id'];
@@ -88,8 +91,22 @@ if(isset($_SESSION['user'])) {
 
             </section>
 
-            <section class="satisfaction">
-
+            <section class="best-seller">
+                <h1>Vos derniers avis !!</h1>
+                <div class="container">
+                    <?php foreach($caroussel2 as $item){?>
+                        <div class="card">
+                            <h2 class='title'><?php echo $item['date'];?></h2>
+                            <div class="bar">
+                                <div class="emptybar"></div>
+                                <div class="filledbar"></div>
+                            </div>
+                            <div class="circle">
+                                <h3 class='title'><?php echo $item['text'];?></h3>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
             </section>
 
             <section class="promess">
