@@ -49,11 +49,14 @@ if(isset($_POST['payment'])){
 <html>
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../public/css/cart.css">
+    <link rel="stylesheet" href="../public/css/root&font.css">
     <title>Panier</title>
 </head>
 <body>
     <?php require('header.php');?>
     <main>
+        <h1>Votre Panier</h1>
     <?php require('errors.php');?>
         <?php
         foreach($items AS $i){
@@ -61,22 +64,21 @@ if(isset($_POST['payment'])){
             <div>
                 <form method="post"><?php
                     $price = $i['price'] * $i['quantity'];
-                    echo '<img class= image src="../public/img/'.$i['image'].'">';
-                    echo 'Article : '.$i['name'];
-                    echo 'Prix : '.$price.' €';
+                    echo '<img class= "image-art" src="../public/img/'.$i['image'].'">';
+                    echo '<div> Article : '.$i['name'].'<br>';
+                    echo 'Prix : '.$price.' €'.'<br>';
                     echo 'Quantité : ';
-                    echo '<button type="submit" name="-'.$i['name'].'">-</button>';
-                    echo $i['quantity'];
-                    echo '<button type="submit" name="+'.$i['name'].'">+</button>';
+                    echo '<button type="submit" name="-'.$i['name'].'">-</button>'.$i['quantity'].'<button type="submit" name="+'.$i['name'].'">+</button> </div>';
                     ?>
                 </form>
             </div>
+            <hr>
             <?php
             $totalPrice = $totalPrice + $price;
         }
-        echo 'Prix total : '.$totalPrice.' €';
         ?>
         <form action="" method="post">
+            <?php echo '<h2>Prix total : '.$totalPrice.' €</h2>'; ?>
             <button type="submit" name="payment">Payer</button>
         </form>
     </main>

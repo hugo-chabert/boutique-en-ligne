@@ -1,0 +1,51 @@
+main h1{
+    text-align: center;
+}
+
+hr{
+    width: 70%;
+}
+
+form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+
+}
+
+.image-art{
+    width: 200px;
+    padding-right: 50px;
+}
+
+main button{
+    font-family: inherit;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: 200;
+    letter-spacing: 1px;
+    outline: 0;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+}
+main button::after {
+    content: "";
+    background-color: var(--Background4-);
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 0.4375rem;
+    left: 0.4375rem;
+    transition: 0.5s;
+}
+
+main button:hover::after {
+    top: 0rem;
+    left: 0rem;
+}
