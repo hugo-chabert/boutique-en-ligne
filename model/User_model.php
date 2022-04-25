@@ -83,11 +83,13 @@ class User_model{
         ));
     }
 
-    public function sql_order($id){
-        $req = "UPDATE users set orders ";
+    public function sql_order($id_user, $orders){
+        $orders+=1;
+        $req = "UPDATE users SET orders = :orders WHERE id = :id_user";
         $stmt = Database::connect_db()->prepare($req);
         $stmt->execute(array(
-            ':id_user' => $id
+            ':id_user' => $id_user,
+            ':orders' => $orders
         ));
     }
 }

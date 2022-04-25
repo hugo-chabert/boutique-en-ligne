@@ -13,6 +13,7 @@ if(isset($_SESSION['user'])) {
     $id_session = $_SESSION['user']['id'];
     $_SESSION['user_item'] = new User($id_session);
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

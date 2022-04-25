@@ -1,6 +1,6 @@
 <?php
 
-class Security{
+class Security {
 
     public static function safeHTML($chain){
         $results  = strip_tags($chain);

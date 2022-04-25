@@ -79,5 +79,13 @@ class Cart_model{
             ));
             exit();
     }
+
+    public function sql_deleteCart($id){
+        $req = "DELETE FROM carts WHERE id = :id";
+        $stmt = Database::connect_db()->prepare($req);
+            $stmt->execute(array(
+                ":id" => $id
+            ));
+    }
 }
 ?>

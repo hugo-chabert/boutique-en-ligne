@@ -34,6 +34,11 @@ class Cart{
         $results = $this->Cart_model->sql_removeBuyItem($id_user);
         return $results;
     }
+
+    public function deleteCart($id){
+        $results = $this->Cart_model->sql_deleteCart($id);
+        return $results;
+    }
 }
 
 ?>

@@ -25,7 +25,7 @@ class Register{
                     ":password" => $password_hash
                 ));
                 Toolbox::addMessageAlert("Le compte est créé!", Toolbox::GREEN_COLOR);
-                header("Location: ../index.php");
+                header("Location: ./connection.php");
                 exit();
             }
 
