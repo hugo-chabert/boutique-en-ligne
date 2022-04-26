@@ -1,56 +1,119 @@
-.row {
-    display: -ms-flexbox; /* IE10 */
+* {
+    padding: 0;
+    margin: 0
+}
+
+body {
+    background-color: #f8f8f8;
     display: flex;
-    -ms-flex-wrap: wrap; /* IE10 */
-    flex-wrap: wrap;
-    margin: 0 -16px;
-}
-
-.col-25 {
-    -ms-flex: 25%; /* IE10 */
-    flex: 25%;
-}
-
-.col-50 {
-    -ms-flex: 50%; /* IE10 */
-    flex: 50%;
-}
-
-.col-75 {
-    -ms-flex: 75%; /* IE10 */
-    flex: 75%;
-}
-
-.col-25,
-.col-50,
-.col-75 {
-    padding: 0 16px;
+    justify-content: center;
+    align-items: center
 }
 
 .container {
-    background-color: #f2f2f2;
-    padding: 5px 20px 15px 20px;
-    border: 1px solid lightgrey;
-    border-radius: 3px;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center
 }
 
-input[type=text] {
+.wrapper {
+    width: 350px;
+    height: 350px;
+    position: relative;
+    border-radius: 10px
+}
+
+.outer-card {
     width: 100%;
-    margin-bottom: 20px;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 10px
 }
 
-label {
-    margin-bottom: 10px;
-    display: block;
+input,
+input::-webkit-input-placeholder {
+    font-size: 16px;
+    line-height: 3
 }
 
-.icon-container {
-    margin-bottom: 20px;
-    padding: 7px 0;
-    font-size: 24px;
+.wrapper .card::after {
+    position: absolute;
+    content: "";
+    width: 200px;
+    height: 200px;
+    background-color: #3641d3;
+    right: -30px;
+    top: -30px;
+    border-radius: 50%;
+    opacity: 0.7
+}
+
+.wrapper .card::before {
+    position: absolute;
+    content: "";
+    width: 300px;
+    height: 300px;
+    background-color: #3641d3;
+    left: -70px;
+    top: -70px;
+    border-radius: 50%;
+    opacity: 0.4
+}
+
+.wrapper .forms {
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px
+}
+
+.wrapper .forms input {
+    height: 40px;
+    width: 100%;
+    font-size: 18px;
+    border: 2px solid #eee;
+    border-radius: 4px;
+    text-indent: 10px;
+    margin-top: 4px
+}
+
+.wrapper .forms input:focus {
+    outline: none
+}
+
+.input-items span {
+    font-size: 14px;
+    margin-left: 2px
+}
+
+.input-items {
+    margin-bottom: 10px
+}
+
+.one-line {
+    display: flex;
+    flex-direction: row
+}
+
+.one-line .input-items:nth-child(1) {
+    margin-right: 10px
+}
+
+.input-buttons {
+    width: 100%;
+    margin-top: 10px
+}
+
+.input-buttons a {
+    width: 100%;
+    height: 45px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #000;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center
 }
 
 .btn {
@@ -69,17 +132,7 @@ label {
     background-color: #45a049;
 }
 
-span.price {
-    float: right;
-    color: grey;
-}
-
-  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
-@media (max-width: 800px) {
-    .row {
-    flex-direction: column-reverse;
-    }
-    .col-25 {
-    margin-bottom: 20px;
-    }
+.price{
+    padding: 5%;
+    text-align: center;
 }
