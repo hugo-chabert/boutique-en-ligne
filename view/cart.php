@@ -79,7 +79,9 @@ if(isset($_POST['payment'])){
         ?>
         <form action="" method="post">
             <?php echo '<h2>Prix total : '.$totalPrice.' €</h2>'; ?>
-            <button type="submit" name="payment">Payer</button>
+            <?php if ($totalPrice > 0){?>
+                <button type="submit" name="payment">Payer</button>
+            <?php } ?>
         </form>
     </main>
     <?php require('footer.php');?>
