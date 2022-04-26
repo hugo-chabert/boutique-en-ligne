@@ -16,6 +16,11 @@ class Order {
         $results = $this->Order_model->sql_addOrder($id_user, $id_item, $id_order, $quantity, $price);
         return $results;
     }
+
+    public function display_order($id_order){
+        $results = $this->Order_model->sql_display_order($id_order);
+        return $results;
+    }
 }
 
 ?>

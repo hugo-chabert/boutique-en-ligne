@@ -24,8 +24,6 @@ foreach($items AS $i){
     $add_order = $order->addOrder($i['id_user'], $i['id_item'], $_SESSION['user']['orders'], $i['quantity'], $price);
     $delete_cart = $cart->deleteCart($i['id']);
 }
-
-var_dump($_SESSION['user']);
 ?>
 
 <!DOCTYPE html>
@@ -38,15 +36,7 @@ var_dump($_SESSION['user']);
 <body>
     <?php require("header.php");?>
     <main>
-        <?php
-            foreach($items AS $i){
-                ?>
-                <div>
-                    <?php echo $i['id_item']; ?>
-                </div>
-                <?php
-            }
-        ?>
+        <p>Votre commande à bien été envoyé. Si vous voulez voir la comande plus en detail allez dans votre profil.</p>
     </main>
     <?php require("footer.php");?>
 </body>

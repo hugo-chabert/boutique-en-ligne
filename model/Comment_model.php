@@ -5,7 +5,7 @@ require_once(__DIR__ . '/../database/database.php');
 class Comment_model{
 
     public function sql_info_comments($id_item){
-        $req = "SELECT * FROM comments WHERE id_item = :id_item";
+        $req = "SELECT * FROM comments c INNER JOIN users u WHERE id_item = :id_item AND c.id_user = u.id";
         $stmt = Database::connect_db()->prepare($req);
         $stmt->execute(array(
             ":id_item" => $id_item

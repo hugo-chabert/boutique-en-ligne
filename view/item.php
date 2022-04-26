@@ -65,7 +65,7 @@ function quantity_list(){
                                 <button class = 'button' type="submit" name="cart">Ajouter au panier</button>
                                 <a href="store.php"><button class = 'button' type="submit" name="buy">Acheter cet article</button></a>
                                 <div class='rating-box'>
-                                    <h1>Rating box</h1> 
+                                    <h1>Rating box</h1>
                                 </div>
                             </article>
                         </form>
@@ -74,16 +74,21 @@ function quantity_list(){
             </section>
             <hr>
             <section>
-            
-                <article>
-                    <!--Note Article-->
-                </article>
-                <article class="box_comm">
+                <div class="container_com">
+                <?php foreach($comment_info as $com){?>
+                    <div class="all_com">
+                        <div class="com_left">
+                            <p class="p_left">Commentaire écrit par : </p><p class="p_left"><?php echo $com['login']?></p>
+                            <p>le : <?php echo $com['date'] ?></p>
+                        </div>
+                        <div class="com_right">
+                            <p> <?php echo $com['text'];?></p>
+                        </div>
+                    </div>
                     <?php
-                        foreach($comment_info as $com){?>
-                        <p> <?php echo $com['text'];?></p>
-                    <?php
-                    }
+                    }?>
+                </div>
+                <article class="box_comm"><?php
 
                     if(Security::isConnect()){?>
 
