@@ -18,10 +18,10 @@ a{
 
 form{
     margin-top: 60%;
+    margin-left: 20% ;
     display: flex;
     flex-direction: column;
     align-items: center ;
-    position: sticky;
 }
 form label{
     margin-top: 0.9375rem;
@@ -122,21 +122,24 @@ main hr{
 }
 .store article {
     display: flex;
+    flex-direction: column;
     margin-bottom: 15px;
     width: 100%;
     padding: 10px;
     flex-wrap: wrap;
     align-items: center;
+    border-left: outset var(--Grey-) 1px;
+    border-right: outset var(--Grey-) 1px;
 }
 .store article div {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     width: 100%;
     margin-top: 0.9375rem;
     flex-direction: column;
     margin-bottom: 30px ;
-    width: 23%;
 }
 .store article img{
     width:300px;
@@ -193,9 +196,6 @@ main hr{
 }
 
 @media all and (min-width: 600px) and (max-width: 992px){
-	body {
-        background-color:blue;
-      }
       main{
         flex-grow: 1;
         display: flex;
@@ -233,9 +233,7 @@ main hr{
 }
 
 @media all and (max-device-width: 599px) {
-	body {
-        background-color:green;
-      }
+
       main{
         flex-grow: 1;
         display: flex;

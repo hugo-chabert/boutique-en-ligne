@@ -69,7 +69,6 @@ else{
                         <a href="item.php?id=<?php echo $item['id'] ?>">Voir Plus</a>
                     </button>
                 </article>
-                <!-- <hr> -->
             <?php } ?>
         </section>
 

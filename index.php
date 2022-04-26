@@ -91,22 +91,18 @@ if(isset($_SESSION['user'])) {
 
             </section>
 
-            <section class="best-seller">
+            <section class="satisfaction">
                 <h1>Vos derniers avis !!</h1>
-                <div class="container">
+                <article class='com-box'>
                     <?php foreach($caroussel2 as $item){?>
-                        <div class="card">
-                            <h2 class='title'><?php echo $item['date'];?></h2>
-                            <div class="bar">
-                                <div class="emptybar"></div>
-                                <div class="filledbar"></div>
-                            </div>
-                            <div class="circle">
-                                <h3 class='title'><?php echo $item['text'];?></h3>
+                        <div class="container-com">
+                            <div class="content">
+                                <h1><?php echo $item['id'];?></h1>
+                                <h3><?php echo $item['text'];?></h3>
                             </div>
                         </div>
                     <?php } ?>
-                </div>
+                </article>
             </section>
 
             <section class="promess">
