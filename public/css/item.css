@@ -160,7 +160,7 @@ form article {
 }
 
 .com_left{
-    box-shadow: 0 1px 2px  var(--Black-);
+    border: solid var(--Grey-) 1px;
     width: 30%;
     justify-content: center;
     display: flex;
@@ -169,7 +169,7 @@ form article {
 }
 
 .com_right{
-    box-shadow: 0 1px 2px  var(--Black-);
+    border: solid var(--Grey-) 1px;
     width: 70%;
     justify-content: center;
     display: flex;

@@ -108,27 +108,6 @@ class User{
             header("Location: ./profile_info.php");
             exit();
         }
-
-/*
-        if($initial_user['login'] == $login_safe) {
-            Toolbox::addMessageAlert("Aucune modification !", Toolbox::RED_COLOR);
-            header("Location: ./profile.php");
-            exit();
-        }
-        elseif(Register::info_user_login($login_safe) == false){
-            $this->User_model->sql_modify_login($login_safe, $this->id);
-            $results = $this->User_model->sql_info_user_id($this->id);
-            $_SESSION['user']['login'] = $results['login'];
-            $_SESSION['user']['id'] = $results['id'];
-            Toolbox::addMessageAlert("Modification ok !", Toolbox::GREEN_COLOR);
-            header("Location: ./profile.php");
-            exit();
-        }
-        elseif(Register::info_user_login($login_safe) == true){
-            Toolbox::addMessageAlert("Ce login est déjà utilisé !", Toolbox::RED_COLOR);
-            header("Location: ./profile.php");
-            exit();
-        }*/
     }
 
     public function modify_login($login){

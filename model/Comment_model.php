@@ -82,6 +82,17 @@ class Comment_model{
         return $results;
     }
 
+    public function sql_info_comments_user($id_user){
+        $req = "SELECT * FROM comments c INNER JOIN items i WHERE id_user = :id_user AND c.id_item = i.id";
+        $stmt = Database::connect_db()->prepare($req);
+        $stmt->execute(array(
+            ":id_user" => $id_user
+        ));
+        $results = $stmt->fetchAll();
+        $stmt->closeCursor();
+        return $results;
+    }
+
     public static function sql_delete($id){
         $req = "DELETE FROM comments WHERE id = :id";
         $stmt = Database::connect_db()->prepare($req);

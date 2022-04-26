@@ -40,6 +40,10 @@ if(isset($_POST['submit_password'])){
     }
 }
 
+if(!Security::isConnect()){
+    header('Location:../index.php');
+}
+
 ?>
 <!DOCTYPE html>
 <html>

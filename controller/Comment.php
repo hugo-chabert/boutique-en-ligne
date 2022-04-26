@@ -30,6 +30,11 @@ class Comment{
         return $results;
     }
 
+    public function info_comments_user($id_user){
+        $results = $this->Comment_model->sql_info_comments_user($id_user);
+        return $results;
+    }
+
     public static function delete($id){
         Comment_model::sql_delete($id);
     }

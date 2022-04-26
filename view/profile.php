@@ -1,5 +1,13 @@
 <?php
+
+require_once(__DIR__ . '/../controller/Toolbox.php');
+require_once(__DIR__ . '/../controller/Security.php');
+
 session_start();
+
+if(!Security::isConnect()){
+    header('Location:../index.php');
+}
 ?>
 
 <!DOCTYPE html>
