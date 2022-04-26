@@ -26,11 +26,11 @@ if(empty($_GET['id'])){
 
 if(isset($_POST['cart'])){
     $cart = new Cart();
-    $add_to_cart = $cart->add_to_cart($_SESSION['user']['id'] ,$item_info['id']);
+    $add_to_cart = $cart->add_to_cart($_SESSION['user']['id'] ,$item_info['id'], $_POST['quantity_for_cart']);
 }
 
 function quantity_list(){
-    for ($i = 1; $i < 31; $i++){
+    for ($i = 1; $i < 11; $i++){
         echo '<option value="'.$i.'">'.$i.'</option>';
     }
 }

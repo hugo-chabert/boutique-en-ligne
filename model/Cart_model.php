@@ -4,7 +4,7 @@ require_once(__DIR__ . '/../database/database.php');
 
 class Cart_model{
 
-    public function sql_add_to_cart($id_user, $id_item){
+    public function sql_add_to_cart($id_user, $id_item, $quantity){
         $req = "SELECT * FROM carts WHERE id_user = :id_user AND id_item = :id_item";
         $stmt = Database::connect_db()->prepare($req);
         $stmt->execute(array(
@@ -15,7 +15,12 @@ class Cart_model{
         $results = $stmt->fetch(PDO::FETCH_ASSOC);
         $stmt->closeCursor();
         if($row > 0){
-            $new_quantity = $results['quantity'] + 1;
+            if($results['quantity'] + $quantity > 10){
+                $new_quantity = 10;
+            }
+            else{
+                $new_quantity = $results['quantity'] + $quantity;
+            }
             $req = "UPDATE carts SET quantity = :new_quantity WHERE id_user = :id_user AND id_item = :id_item";
             $stmt = Database::connect_db()->prepare($req);
             $stmt->execute(array(
@@ -27,11 +32,12 @@ class Cart_model{
             exit();
         }
         elseif($row == 0){
-            $req = "INSERT INTO carts (id_user, id_item, quantity) VALUE (:id_user, :id_item, 1)";
+            $req = "INSERT INTO carts (id_user, id_item, quantity) VALUE (:id_user, :id_item, :quantity)";
             $stmt = Database::connect_db()->prepare($req);
             $stmt->execute(array(
                 ':id_user' => $id_user,
-                ':id_item' => $id_item
+                ':id_item' => $id_item,
+                ':quantity' => $quantity
             ));
             header("Location: cart.php");
             exit();

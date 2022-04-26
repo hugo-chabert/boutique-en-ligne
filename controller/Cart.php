@@ -10,8 +10,8 @@ class Cart{
         $this->Cart_model = new Cart_model();
     }
 
-    public function add_to_cart($id_user, $id_item){
-        $results = $this->Cart_model->sql_add_to_cart($id_user, $id_item);
+    public function add_to_cart($id_user, $id_item, $quantity){
+        $results = $this->Cart_model->sql_add_to_cart($id_user, $id_item, $quantity);
         return $results;
     }
 
