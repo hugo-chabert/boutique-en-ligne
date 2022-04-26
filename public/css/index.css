@@ -271,8 +271,43 @@ article .info-item button:hover {
 
 /*Partie Message client*/
 .satisfaction{
-    height: 90vh;
-    background-color:yellow;
+    height: 35vh;
+}
+.satisfaction h1{
+    font-size: clamp(1rem, 3vw, 3.5rem);
+    text-align: center;
+    font-family: Title;
+    letter-spacing: 4px;
+    margin-top: 0;
+}
+.com-box{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 6.25rem;
+}
+
+.container-com{
+    width: 25%;
+    transition: ease-in-out 0.5s;
+    background-color: var(--Background0-);
+}
+.container-com:hover{
+    box-shadow: 1px 2px 3px 1px var(--Background4-);
+}
+
+.container-com h2{
+    font-size: clamp(1rem, 2vw, 1.85rem);
+    margin: 0 1.25rem 0.625rem;
+    font-family: Texte;
+    letter-spacing: 2px;
+}
+.container-com h3{
+    font-size: clamp(0.75rem, 2vw, 1.5rem);
+    margin: 0 1.25rem 1.25rem;
+    font-family: Texte;
+    letter-spacing: 1px;
 }
 
 
