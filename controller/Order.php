@@ -21,6 +21,16 @@ class Order {
         $results = $this->Order_model->sql_display_order($id_order);
         return $results;
     }
+
+    public function info_order_user($id_user){
+        $results = $this->Order_model->sql_info_order_user($id_user);
+        return $results;
+    }
+
+    public function info_order_user_id($id_user, $id_order){
+        $results = $this->Order_model->sql_info_order_user_id($id_user, $id_order);
+        return $results;
+    }
 }
 
 ?>

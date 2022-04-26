@@ -27,6 +27,29 @@ class Order_model{
         $stmt->closeCursor();
         return $results;
     }
+
+    public function sql_info_order_user($id_user){
+        $req = "SELECT * FROM orders WHERE id_user = :id_user";
+        $stmt = Database::connect_db()->prepare($req);
+        $stmt->execute(array(
+            ":id_user" => $id_user
+        ));
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+        return $results;
+    }
+
+    public function sql_info_order_user_id($id_user, $id_order){
+        $req = "SELECT * FROM orders WHERE id_user = :id_user AND id_order = :id_order";
+        $stmt = Database::connect_db()->prepare($req);
+        $stmt->execute(array(
+            ":id_user" => $id_user,
+            ":id_order" => $id_order
+        ));
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+        return $results;
+    }
 }
 
 ?>
