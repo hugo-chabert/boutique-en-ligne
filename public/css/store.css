@@ -73,10 +73,10 @@ form select{
 }
 
 #filter-button {
-    font-family: inherit;
+    font-family: Texte;
     font-size: clamp(1rem, 2vw, 1.5rem);
     font-weight: 200;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     padding: 13px 50px 13px;
     outline: 0;
     border: 1px solid black;
@@ -138,9 +138,22 @@ main hr{
     margin: 0;
 }
 
+.store article h2{
+    font-size: clamp(1rem, 2vw, 2rem);
+    font-family: Title;
+    letter-spacing: 4px;
+}
+.store article h3{
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    font-family: Texte;
+    letter-spacing: 4px;
+}
+
 .store article button {
     align-self: center;
     font-size: clamp(1rem, 2vw, 1.20rem);
+    font-family: Texte;
+    letter-spacing: 2px;
     width: fit-content;
     margin-top: 1.25rem;
     padding: 13px 20px 13px;

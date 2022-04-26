@@ -25,7 +25,9 @@ main * {
 }
 
 .contact .content-ctc h2{
-    font-size: 36px;
+    font-family: Title;
+    letter-spacing: 4px;
+    font-size: clamp(1rem, 3vw, 3.5rem);
     font-weight: 500;
     color: var(--Black-);
 }
@@ -42,6 +44,9 @@ main * {
     width: 50%;
     display: flex;
     flex-direction: column;
+    font-family: Texte;
+    letter-spacing: 2px;
+    font-size: clamp(1rem, 2vw, 1.3rem);
 }
 
 .contain-ctc .contactInfo .box{
@@ -83,11 +88,16 @@ main * {
     padding: 40px;
     background: var(--Background-);
     border-radius: 2%;
+    font-family: Texte;
+    letter-spacing: 2px;
+    font-size: clamp(1rem, 2vw, 1.85rem);
 }
 
 .contactForm h2
 {
-    font-size: 30px;
+    font-family: Texte;
+    letter-spacing: 2px;
+    font-size: clamp(1rem, 2vw, 1.85rem);
     color: #333;
     font-weight: 500;
 }
@@ -103,7 +113,9 @@ main * {
 .contactForm .inputBox textarea {
     width: 100%;
     padding: 5px 0;
-    font-size: 16px;
+    font-family: Texte;
+    letter-spacing: 2px;
+    font-size: clamp(1rem, 2vw, 1.2rem);
     margin : 10px 0;
     border: none;
     border-bottom: 2px solid var(--Grey-);

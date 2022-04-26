@@ -1,9 +1,23 @@
 main h1{
     text-align: center;
+    font-family: Title;
+    letter-spacing: 4px;
+    font-size: clamp(1rem, 3vw, 4rem);
+}
+main h2{
+    margin-right: 50px;
+    font-family: Texte;
+    letter-spacing: 2px;
+    font-size: clamp(1rem, 2vw, 1.85rem);
+}
+main p{
+    font-family: Texte;
+    letter-spacing: 2px;
+    font-size: clamp(1rem, 2vw, 1.25rem);
 }
 
 hr{
-    width: 70%;
+    width: 50%;
 }
 
 form{
@@ -12,7 +26,8 @@ form{
     justify-content: center;
     align-items: center;
     font-size: clamp(1rem, 2vw, 1.5rem);
-
+    font-family: Texte;
+    letter-spacing: 2px;
 }
 
 .image-art{
@@ -25,6 +40,8 @@ main button{
     margin-left: 10px;
     margin-right: 10px;
     font-size: clamp(1rem, 2vw, 1.5rem);
+    font-family: Texte;
+    letter-spacing: 2px;
     font-weight: 200;
     letter-spacing: 1px;
     outline: 0;

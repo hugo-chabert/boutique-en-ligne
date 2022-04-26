@@ -40,12 +40,12 @@ if(isset($_SESSION['user'])) {
                             Takahiro Arts, <br>
                             Notre seule limite c'est vous
                         </h1>
-                        <a href="view/store.php"><button>Découvrir un nouveau monde</button></a>
+                        <a href="view/store.php"><button>Decouvrir un nouveau monde</button></a>
                     </div>
                 </article>
 
                 <article>
-                    <h1>L'exclusivité du mois !!!</h1>
+                    <h1>L'exclusivite du mois !!!</h1>
 
                     <section class="month-item">
                         <img src="public/img/<?php echo $last_item['image']?>" alt="test">
@@ -67,7 +67,7 @@ if(isset($_SESSION['user'])) {
             </section>
 
             <section class="best-seller">
-                <h1>Les dernières nouveautés !!</h1>
+                <h1>Les dernieres nouveautes !!</h1>
                 <div class="container">
                     <?php foreach($caroussel as $item){?>
                         <div class="card">
@@ -120,7 +120,7 @@ if(isset($_SESSION['user'])) {
                 </article>
                 <article>
                     <img src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/100/000000/external-flash-photography-kiranshastry-solid-kiranshastry.png"/>
-                    <h3>Création Rapide</h3>
+                    <h3>Creation Rapide</h3>
                 </article>
                 <article>
                     <img src="https://img.icons8.com/ios-filled/100/000000/communication.png"/>

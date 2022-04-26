@@ -16,11 +16,14 @@ form{
 fieldset{
     display: flex;
     flex-direction: column;
+    font-family: Texte;
+    letter-spacing: 2px;
+    font-size: clamp(1rem, 2vw, 1.85rem);
 }
 
 fieldset legend{
     font-family: Title;
-    font-size: clamp(0.5rem, 2vw, 1.5rem);
+    font-size: clamp(1rem, 2.5vw, 3rem);
 }
 
 fieldset label{
@@ -40,6 +43,8 @@ fieldset input{
 }
 form p {
     text-align: center;
+    font-family: Texte;
+    letter-spacing: 2px;
     font-size: clamp(1rem, 2vw, 1.25rem);
 }
 /*BUTTON*/
