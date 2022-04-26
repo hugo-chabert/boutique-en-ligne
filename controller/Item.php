@@ -56,6 +56,11 @@ class Item{
         $results = $this->Item_model->sql_display_Item_Carousel();
         return $results;
     }
+
+    public function delete_item($id){
+        $results = $this->Item_model->sql_delete_item($id);
+        return $results;
+    }
 }
 
 ?>

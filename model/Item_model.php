@@ -106,6 +106,15 @@ class Item_model{
         $stmt->closeCursor();
         return $results;
     }
+
+    public function sql_delete_item($id){
+        $req = "DELETE FROM items WHERE id = :id";
+        $stmt = Database::connect_db()->prepare($req);
+            $stmt->execute(array(
+                ":id" => $id
+            ));
+        header('Location: admin-item-delete.php');
+    }
 }
 
 ?>
