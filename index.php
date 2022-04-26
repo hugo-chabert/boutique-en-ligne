@@ -97,8 +97,9 @@ if(isset($_SESSION['user'])) {
                     <?php foreach($caroussel2 as $item){?>
                         <div class="container-com">
                             <div class="content">
-                                <h1><?php echo $item['id'];?></h1>
+                                <h1><?php echo $item['login'];?></h1>
                                 <h3><?php echo $item['text'];?></h3>
+                                <h5>raison: <?php echo $item['reason'];?></h5>
                             </div>
                         </div>
                     <?php } ?>

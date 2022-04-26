@@ -102,7 +102,7 @@ class Comment_model{
     }
 
     public function sql_display_Com_Carousel(){
-        $req = "SELECT * FROM advices ORDER BY id DESC LIMIT 3";
+        $req = "SELECT a.id AS adviceid, a.text AS text, a.reason AS reason, u.id AS userid, u.login AS login FROM advices a INNER JOIN users u WHERE a.id_user = u.id ORDER BY adviceid DESC LIMIT 3";
         $stmt = Database::connect_db()->prepare($req);
         $stmt->execute();
         $results = $stmt->fetchAll();
