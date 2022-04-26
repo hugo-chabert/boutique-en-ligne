@@ -23,6 +23,7 @@ require_once(__DIR__ . '/../controller/Payment.php');
                     <div class="outer-card">
                         <div class="price"><?php  echo " Le prix est de ".$finalPrice ."€";?></div>
                         <div class="forms">
+                            <div id="card-errors" role="alert"></div>
                             <div id="card-elements" class="input-items"> </div>
                             <div id="cardholder-name" class="input-items"> <span>Name on card</span> <input placeholder="Samuel Iscon"> </div>
                             <button class="btn" id="card-button" type="button" data-secret="<?= $intent['client_secret'] ?>">Valider le paiement</button>
