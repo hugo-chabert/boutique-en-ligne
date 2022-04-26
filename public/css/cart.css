@@ -20,6 +20,22 @@ hr{
     width: 50%;
 }
 
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.profile-content{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 70%;
+    margin: 8.125rem 50px 6.25rem;
+    gap: 4.375rem;
+}
+
 form{
     display: flex;
     flex-direction: row;

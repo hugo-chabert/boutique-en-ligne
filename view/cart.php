@@ -56,33 +56,36 @@ if(isset($_POST['payment'])){
 <body>
     <?php require('header.php');?>
     <main>
-        <h1>Votre Panier</h1>
-    <?php require('errors.php');?>
-        <?php
-        foreach($items AS $i){
-            ?>
-            <div>
-                <form method="post"><?php
-                    $price = $i['price'] * $i['quantity'];
-                    echo '<img class= "image-art" src="../public/img/'.$i['image'].'">';
-                    echo '<div> Article : '.$i['name'].'<br>';
-                    echo 'Prix : '.$price.' €'.'<br>';
-                    echo 'Quantité : ';
-                    echo '<button type="submit" name="-'.$i['name'].'">-</button>'.$i['quantity'].'<button type="submit" name="+'.$i['name'].'">+</button> </div>';
-                    ?>
-                </form>
-            </div>
-            <hr>
+        <?php require("side_nav.php")?>
+        <section class="profile-content">
+            <h1>Votre Panier</h1>
+            <?php require('errors.php');?>
             <?php
-            $totalPrice = $totalPrice + $price;
-        }
-        ?>
-        <form action="" method="post">
-            <?php echo '<h2>Prix total : '.$totalPrice.' €</h2>'; ?>
-            <?php if ($totalPrice > 0){?>
-                <button type="submit" name="payment">Payer</button>
-            <?php } ?>
-        </form>
+            foreach($items AS $i){
+                ?>
+                <div>
+                    <form method="post"><?php
+                        $price = $i['price'] * $i['quantity'];
+                        echo '<img class= "image-art" src="../public/img/'.$i['image'].'">';
+                        echo '<div> Article : '.$i['name'].'<br>';
+                        echo 'Prix : '.$price.' €'.'<br>';
+                        echo 'Quantité : ';
+                        echo '<button type="submit" name="-'.$i['name'].'">-</button>'.$i['quantity'].'<button type="submit" name="+'.$i['name'].'">+</button> </div>';
+                        ?>
+                    </form>
+                </div>
+                <hr>
+                <?php
+                $totalPrice = $totalPrice + $price;
+            }
+            ?>
+            <form action="" method="post">
+                <?php echo '<h2>Prix total : '.$totalPrice.' €</h2>'; ?>
+                <?php if ($totalPrice > 0){?>
+                    <button type="submit" name="payment">Payer</button>
+                <?php } ?>
+            </form>
+        </section>
     </main>
     <?php require('footer.php');?>
 </body>
