@@ -38,7 +38,15 @@ var_dump($_SESSION['user']);
 <body>
     <?php require("header.php");?>
     <main>
-
+        <?php
+            foreach($items AS $i){
+                ?>
+                <div>
+                    <?php echo $i['id_item']; ?>
+                </div>
+                <?php
+            }
+        ?>
     </main>
     <?php require("footer.php");?>
 </body>
