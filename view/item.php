@@ -57,6 +57,7 @@ function quantity_list(){
                         <h3> <?php echo $item_info['price'];?> €</h3>
                         <p> <?php echo $item_info['description'];?> </p>
                         <form method="post">
+                            <?php if(Security::isConnect()){?>
                             <label for="quantity_for_cart">Saisir la quantité voulu</label>
                             <select name="quantity_for_cart" id="quantity_for_cart">
                                 <?php quantity_list() ?>
@@ -68,6 +69,7 @@ function quantity_list(){
                                     <h1>Rating box</h1>
                                 </div>
                             </article>
+                            <?php } ?>
                         </form>
                     </div>
                 </article>
