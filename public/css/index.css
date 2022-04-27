@@ -309,6 +309,12 @@ article .info-item button:hover {
     font-family: Texte;
     letter-spacing: 1px;
 }
+.container-com h5{
+    font-size: clamp(0.75rem, 2vw, 1.1rem);
+    margin: 0 1.25rem 1.25rem;
+    font-family: Texte;
+    letter-spacing: 1px;
+}
 
 
 /* Pastilles indications*/

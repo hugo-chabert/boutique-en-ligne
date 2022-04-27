@@ -9,6 +9,8 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/css/story.css">
     <link rel="stylesheet" href="../public/css/root&font.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <title>Qui sommes-nous ?</title>
 </head>
 <body>
@@ -135,4 +137,7 @@ session_start();
     </main>
     <?php require("footer.php")?>
 </body>
+<script>
+    AOS.init();
+</script>
 </html>
