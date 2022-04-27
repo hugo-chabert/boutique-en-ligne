@@ -35,7 +35,7 @@ if(isset($_POST['del'])){
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../public/css/admin_item.css">
         <link rel="stylesheet" href="../public/css/root&font.css">
-        <title>Gestion d'un utilisateur</title>
+        <title>Gestion des commentaires</title>
     </head>
     <body>
         <?php require("header.php");?>

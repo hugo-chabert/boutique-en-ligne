@@ -1,13 +1,15 @@
 <?php
 
-require_once(__DIR__ . '/../controller/Comment.php');
+require_once(__DIR__ . '/../controller/Order.php');
 require_once(__DIR__ . '/../controller/Toolbox.php');
 require_once(__DIR__ . '/../controller/Security.php');
 
 session_start();
 
-$comment = new Comment();
-$comment_info = $comment->info_comments_user($_SESSION['user']['id']);
+
+$order_id = $_SESSION['user']['orders'];
+$order = new Order();
+$user_order_id = $order->info_order_user_id($_SESSION['user']['id'], $order_id);
 
 if(!Security::isConnect()){
     header('Location:../index.php');
@@ -21,32 +23,25 @@ if(!Security::isConnect()){
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../public/css/admin_item.css">
         <link rel="stylesheet" href="../public/css/root&font.css">
-        <title>Gestion d'un utilisateur</title>
+        <title>Vos commandes</title>
     </head>
     <body>
         <?php require("header.php");?>
         <main>
             <?php require("side_nav.php")?>
             <section class="profile-content">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Commentaire</th>
-                            <th>Article</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        foreach ($comment_info as $value) {
-                            ?>
-                            <tr>
-                                <td><?= $value['text'] ?></td>
-                                <td><?= $value['name'] ?></td>
-                            </tr>
-                        <?php }
-                        ?>
-                    </tbody>
-                </table>
+                <div>
+                    <?php
+                    while($user_order == true){
+                        $user_order_id = $order->info_order_user_id($_SESSION['user']['id'], $order_id);
+                        foreach($user_order_id AS $uoid){
+                            echo $uoid['id'];
+                        }
+                        $order_id =- 1;
+                        ?><br> <?php
+                    }
+                    ?>
+                </div>
             </section>
         </main>
         <?php require("footer.php")?>
